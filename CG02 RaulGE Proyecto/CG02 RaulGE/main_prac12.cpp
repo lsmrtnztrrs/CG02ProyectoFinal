@@ -8,6 +8,8 @@
 			GRUPO: 02
 			SEMESTRE: 2019
 
+			Martinez Torres Luis Martin
+
 			VISUAL STUDIO 2017
 
 */
