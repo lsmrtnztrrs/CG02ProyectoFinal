@@ -8,6 +8,7 @@
 			GRUPO: 02
 			SEMESTRE: 2019
 
+			Guzman Esquivel Raul 
 			Martinez Torres Luis Martin
 
 			VISUAL STUDIO 2017
