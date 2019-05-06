@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CG02 RaulGE", "CG02 RaulGE\CG02 RaulGE.vcxproj", "{03EDD9B9-7E0B-4E5D-B091-03F508C39C0B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{81C1ABA9-9760-4B6E-91A9-CC10B42BC2CA}"
+	ProjectSection(SolutionItems) = preProject
+		CG02 RaulGE\animaciones.h = CG02 RaulGE\animaciones.h
+		CG02 RaulGE\Camera.h = CG02 RaulGE\Camera.h
+		CG02 RaulGE\figuras.h = CG02 RaulGE\figuras.h
+		CG02 RaulGE\renders.h = CG02 RaulGE\renders.h
+		CG02 RaulGE\texture.h = CG02 RaulGE\texture.h
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03EDD9B9-7E0B-4E5D-B091-03F508C39C0B}.Debug|x64.ActiveCfg = Debug|x64
+		{03EDD9B9-7E0B-4E5D-B091-03F508C39C0B}.Debug|x64.Build.0 = Debug|x64
+		{03EDD9B9-7E0B-4E5D-B091-03F508C39C0B}.Debug|x86.ActiveCfg = Debug|Win32
+		{03EDD9B9-7E0B-4E5D-B091-03F508C39C0B}.Debug|x86.Build.0 = Debug|Win32
+		{03EDD9B9-7E0B-4E5D-B091-03F508C39C0B}.Release|x64.ActiveCfg = Release|x64
+		{03EDD9B9-7E0B-4E5D-B091-03F508C39C0B}.Release|x64.Build.0 = Release|x64
+		{03EDD9B9-7E0B-4E5D-B091-03F508C39C0B}.Release|x86.ActiveCfg = Release|Win32
+		{03EDD9B9-7E0B-4E5D-B091-03F508C39C0B}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2B0F7FED-6229-4B91-BD92-A3F9A4013F89}
+	EndGlobalSection
+EndGlobal
