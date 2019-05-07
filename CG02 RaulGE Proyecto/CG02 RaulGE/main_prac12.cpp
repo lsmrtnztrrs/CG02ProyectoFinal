@@ -536,7 +536,7 @@ void display(void) {
 		//////////Rueda /////////////
 
 	glPushMatrix();
-	
+
 	glTranslatef(-5.0f, -6.0f, 9.0);
 	glScalef(6, 6, 6);
 	glRotatef(40.0f, 0.0f, 1.0f, 0.0f);
@@ -566,7 +566,7 @@ void display(void) {
 
 	glPushMatrix();
 	glRotatef(rueda, 0, 0, 1);
-	glColor3f(0,1,0);
+	glColor3f(0, 1, 0);
 	glutSolidCube(.75);
 	glScalef(0.25, 0.25, 0.25);
 	glTranslatef(0.0f, 11.0f, 0.0f);
@@ -633,39 +633,45 @@ void display(void) {
 	glPushMatrix();
 	glRotatef(rueda, 0, 0, 1);
 	glColor3f(0.0f, 0.0f, 1.0f);
+	glLineWidth(8.0);
 	glutWireTorus(.5, 2, 3, 20);
+
 	glPopMatrix();
 
 	glPushMatrix();
 	glColor3f(1.0f, 0, 0);
 	glRotatef(rueda, 0, 0, 1);
-	
+
 	glutWireTorus(1, .6, 2, 10);
 	glColor3f(1.0f, 1, 1);
 	glPopMatrix();
 
-	
+
 	glPopMatrix();
 
 	///////////////////////////////////////////
 
-	//////////////////Avion////////////////
+	//////////////////Juego Aviones///////////////////
 
-	//Avion
+	//Avion1
 	glPushMatrix();
-	glTranslatef(40, 20, -90);
+	glTranslatef(-30,0,-30);
+	glScalef(2, 2, 2);
+	glPushMatrix();
+	
 	glRotatef(giroAvion1, 0, 1, 0);
-	glRotatef(180, 0, 0, 1);
 	glRotatef(30, 0, 0, 1);
-	figura.cilindro(0.1, -10, 10);
+	figura.cilindroVertical(0.1, -10, 10, 0);
 	glDisable(GL_COLOR_MATERIAL);
 	glTranslatef(0, -10, 0);
 	glScalef(0.03, 0.03, 0.03);
 	avion1.GLrender(NULL, _SHADED, 1.0);  //_WIRED O _POINTS
 	glEnable(GL_COLOR_MATERIAL);
 	glPopMatrix();
+	glLoadIdentity();
+	glPopMatrix();
 
-	///////////////////////////////////////
+	//////////////////////////////////////////
 
 		/* SKYBOX */
 
@@ -2868,7 +2874,7 @@ void animation() {
 	if (avion1Girando)
 	{
 		if (giroAvion1 < 360)
-			giroAvion1 -= 10;
+			giroAvion1 += 20;
 		else
 			giroAvion1 = 0;
 	}
