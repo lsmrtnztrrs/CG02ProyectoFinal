@@ -653,8 +653,9 @@ void display(void) {
 
 	//Avion
 	glPushMatrix();
-	glTranslatef(140, 50, -132);
+	glTranslatef(40, 20, -90);
 	glRotatef(giroAvion1, 0, 1, 0);
+	glRotatef(180, 0, 0, 1);
 	glRotatef(30, 0, 0, 1);
 	figura.cilindro(0.1, -10, 10);
 	glDisable(GL_COLOR_MATERIAL);
@@ -2520,23 +2521,6 @@ void animacion()
 	if (obj.text_der < 0)
 		obj.text_der = 1;
 
-	dwCurrentTime = GetTickCount(); // Even better to use timeGetTime()
-	dwElapsedTime = dwCurrentTime - dwLastUpdateTime;
-	//rotacion 
-	if (dwElapsedTime >= 5)
-	{
-		rueda = (rueda - 1) % 360;
-
-		dwLastUpdateTime = dwCurrentTime;
-	}
-	//Movimiento Avion
-	if (avion1Girando)
-	{
-		if (giroAvion1 < 360)
-			giroAvion1 += 0.5;
-		else
-			giroAvion1 = 0;
-	}
 
 	//Movimiento del monito
 	if (play)
@@ -2642,8 +2626,8 @@ void keyboard(unsigned char key, int x, int y) {
 		voltear = 90.0;
 		break;
 
-	case'ñ':
-	case'Ñ':
+	case'v':
+	case'V':
 		avion1Girando = !avion1Girando;
 		break;
 
@@ -2667,8 +2651,8 @@ void keyboard(unsigned char key, int x, int y) {
 		circuito = false;
 		break;
 
-	case 'v':		//  
-	case 'V':
+	case 'ñ':		//  
+	case 'Ñ':
 		circuito ^= true; //Activamos/desactivamos la animacíon
 		g_fanimacion = false;
 		break;
@@ -2823,12 +2807,13 @@ void animation() {
 	dwCurrentTime = GetTickCount(); // Even better to use timeGetTime()
 	dwElapsedTime = dwCurrentTime - dwLastUpdateTime;
 
-	if (dwElapsedTime >= 5)
+	if (dwElapsedTime >= 50)
 		{
-			rueda = (rueda - 1) % 360;
+			rueda = (rueda - 10) % 360;
 
 			dwLastUpdateTime = dwCurrentTime;
 		}
+
 	if (dwElapsedTime >= 30)
 	{
 
@@ -2878,6 +2863,15 @@ void animation() {
 
 
 
+	//Movimiento avion
+
+	if (avion1Girando)
+	{
+		if (giroAvion1 < 360)
+			giroAvion1 -= 10;
+		else
+			giroAvion1 = 0;
+	}
 
 
 
