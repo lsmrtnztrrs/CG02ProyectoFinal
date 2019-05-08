@@ -862,6 +862,10 @@ void display(void) {
 	glTranslatef(-72.0f, -28.5f, -77.0f);
 	RusaRampa(4);
 	glPopMatrix();
+	glPushMatrix();
+		glTranslatef(-72.0f, -24.5f, -84.0f);
+		RusaRampa(4);
+	glPopMatrix();
 	glPopMatrix();
 
 	//Cancha de Futbol
