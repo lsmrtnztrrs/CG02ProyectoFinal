@@ -651,27 +651,7 @@ void display(void) {
 
 	///////////////////////////////////////////
 
-	//////////////////Juego Aviones///////////////////
-
-	//Avion1
-	glPushMatrix();
-	glTranslatef(-30,0,-30);
-	glScalef(2, 2, 2);
-	glPushMatrix();
 	
-	glRotatef(giroAvion1, 0, 1, 0);
-	glRotatef(30, 0, 0, 1);
-	figura.cilindroVertical(0.1, -10, 10, 0);
-	glDisable(GL_COLOR_MATERIAL);
-	glTranslatef(0, -10, 0);
-	glScalef(0.03, 0.03, 0.03);
-	avion1.GLrender(NULL, _SHADED, 1.0);  //_WIRED O _POINTS
-	glEnable(GL_COLOR_MATERIAL);
-	glPopMatrix();
-	glLoadIdentity();
-	glPopMatrix();
-
-	//////////////////////////////////////////
 
 		/* SKYBOX */
 
@@ -2500,7 +2480,49 @@ void display(void) {
 
 	// FIN DE PERSONAS
 
+	//////////////////Juego Aviones///////////////////
 
+	
+
+	//////////////////////////////////////////
+		//Poste Avion//
+	glPushMatrix();
+	glTranslatef(-30, 0, -30);
+	glScalef(3, 3, 3);
+	figura.cilindroVertical(0.5, -10, 10, 0);
+
+	glPopMatrix();
+		
+	/////////////////////////////////
+		//Avion2
+	glPushMatrix();
+	glTranslatef(-30, 0, -30);
+	glRotatef(180, 0, 1, 0);
+	glScalef(2, 2, 2);
+
+	glPushMatrix();
+
+	glRotatef(giroAvion1, 0, 1, 0);
+	glRotatef(40, 0, 0, 1);
+	figura.cilindroVertical(0.1, -10, 10, 0);
+	glDisable(GL_COLOR_MATERIAL);
+	glTranslatef(0, -10, 0);
+	glScalef(0.03, 0.03, 0.03);
+	//glDisable(GL_LIGHTING);
+	avion1.GLrender(NULL, _SHADED, 1.0);  //_WIRED O _POINTS
+	//glEnable(GL_LIGHTING);
+
+	glEnable(GL_COLOR_MATERIAL);
+	glPopMatrix();
+	
+	glPopMatrix();
+
+	//////////////////////////////////////////
+
+	/////////Rieles de Montaña////////////////
+
+
+	///////////////////////////////////////////
 
 
 
@@ -2514,6 +2536,8 @@ void display(void) {
 
 	glPopMatrix(); // FIN AREA DE DIBUJO
 	glPopMatrix(); // FIN CAMARA
+
+
 
 	glutSwapBuffers();
 }
