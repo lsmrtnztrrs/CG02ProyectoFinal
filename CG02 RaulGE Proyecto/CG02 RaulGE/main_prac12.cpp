@@ -515,28 +515,48 @@ void InitGL(GLvoid)     // Inicializamos parametros
 }
 
 
-void Rusa() {
+void Rusa(float altura) {
 	glPushMatrix();
-	glPushMatrix();
-	glTranslatef(-2, 0, 0);
-	glRotatef(-90, 0, 1, 0);
-	figura.cilindro(0.5, 8, 40);
-	glPopMatrix();
-	glPushMatrix();
-	glTranslatef(2, 0, 0);
-	glRotatef(-90, 0, 1, 0);
-	figura.cilindro(0.5, 8, 40);
-	glPopMatrix();
-	glPushMatrix();
-	glTranslatef(0, 0, -2);
-	//glRotatef(-90, 0, 1, 0);
-	figura.cilindro(0.5, 4, 40);
-	glPopMatrix();
-	glPushMatrix();
-	glTranslatef(0, 0, 2);
-	//glRotatef(-90, 0, 1, 0);
-	figura.cilindro(0.5, 4, 40);
-	glPopMatrix();
+		glPushMatrix();
+			glTranslatef(-2, 0, 0);
+			glRotatef(-90, 0, 1, 0);
+			figura.cilindro(0.5, 8, 40);
+		glPopMatrix();
+		glPushMatrix();
+			glTranslatef(2, 0, 0);
+			glRotatef(-90, 0, 1, 0);
+			figura.cilindro(0.5, 8, 40);
+		glPopMatrix();
+		glPushMatrix();
+			glTranslatef(0, 0, -2);
+			//glRotatef(-90, 0, 1, 0);
+			figura.cilindro(0.5, 4, 40);
+		glPopMatrix();
+		glPushMatrix();
+			glTranslatef(0, 0, 2);
+			//glRotatef(-90, 0, 1, 0);
+			figura.cilindro(0.5, 4, 40);
+		glPopMatrix();
+		glPushMatrix();
+			glTranslatef(-2, -0.5 + ((altura)/2), -2);
+			glRotatef(-90, 0, 0, 1);
+			figura.cilindro(0.5, altura, 40);
+		glPopMatrix();
+		glPushMatrix();
+			glTranslatef(-2, -0.5 + ((altura) / 2), 2);
+			glRotatef(-90, 0, 0, 1);
+			figura.cilindro(0.5, altura, 40);
+		glPopMatrix();
+		glPushMatrix();
+			glTranslatef(2, -0.5 + ((altura) / 2), -2);
+			glRotatef(-90, 0, 0, 1);
+			figura.cilindro(0.5, altura, 40);
+		glPopMatrix();
+		glPushMatrix();
+			glTranslatef(2, -0.5 + ((altura) / 2), 2);
+			glRotatef(-90, 0, 0, 1);
+			figura.cilindro(0.5, altura, 40);
+		glPopMatrix();
 	glPopMatrix();
 
 
@@ -726,7 +746,7 @@ void display(void) {
 	glPushMatrix();
 	glPushMatrix();
 	glTranslatef(-70.0f, -28.5f, -20.5f);
-	Rusa();
+	Rusa(1);
 	glPopMatrix();
 	glPopMatrix();
 
