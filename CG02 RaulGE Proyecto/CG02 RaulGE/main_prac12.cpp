@@ -8,7 +8,7 @@
 			GRUPO: 02
 			SEMESTRE: 2019
 
-			Guzman Esquivel Raul 
+			Guzman Esquivel Raul
 			Martinez Torres Luis Martin
 
 			VISUAL STUDIO 2017
@@ -24,8 +24,8 @@ TECLAS
 		d/D: Mover camara derecha.
 		q/Q: Mover camara arriba.
 		e/E: Mover camara abajo.
-*/	
-		
+*/
+
 
 //		<: Rotar camara izquierda.
 //		>: Rotar camara derecha.
@@ -149,6 +149,10 @@ GLfloat m_s1[] = { 18 };
 /* FIN MATERIALES */
 
 /* INICIO TEXTURAS */
+CTexture parque;
+CTexture parque2;
+CTexture parque3;
+CTexture parque4;
 
 CTexture none;
 CTexture wood;
@@ -400,6 +404,22 @@ void InitGL(GLvoid)     // Inicializamos parametros
 
 	/* CARGA TEXTURAS */
 
+	parque.LoadTGA("texturas/parque.tga");
+	parque.BuildGLTexture();
+	parque.ReleaseImage();
+
+	parque2.LoadTGA("texturas/parque2.tga");
+	parque2.BuildGLTexture();
+	parque2.ReleaseImage();
+
+	parque3.LoadTGA("texturas/parque3.tga");
+	parque3.BuildGLTexture();
+	parque3.ReleaseImage();
+
+	parque4.LoadTGA("texturas/parque4.tga");
+	parque4.BuildGLTexture();
+	parque4.ReleaseImage();
+
 	none.LoadTGA("texturas/none.tga");
 	none.BuildGLTexture();
 	none.ReleaseImage();
@@ -517,46 +537,46 @@ void InitGL(GLvoid)     // Inicializamos parametros
 
 void Rusa(float altura) {
 	glPushMatrix();
-		glPushMatrix();
-			glTranslatef(-2, 0, 0);
-			glRotatef(-90, 0, 1, 0);
-			figura.cilindro(0.5, 8, 40);
-		glPopMatrix();
-		glPushMatrix();
-			glTranslatef(2, 0, 0);
-			glRotatef(-90, 0, 1, 0);
-			figura.cilindro(0.5, 8, 40);
-		glPopMatrix();
-		glPushMatrix();
-			glTranslatef(0, 0, -2);
-			//glRotatef(-90, 0, 1, 0);
-			figura.cilindro(0.5, 4, 40);
-		glPopMatrix();
-		glPushMatrix();
-			glTranslatef(0, 0, 2);
-			//glRotatef(-90, 0, 1, 0);
-			figura.cilindro(0.5, 4, 40);
-		glPopMatrix();
-		glPushMatrix();
-			glTranslatef(-2, - ((altura)/2), -2);
-			glRotatef(90, 0, 0, 1);
-			figura.cilindro(0.5, altura, 40);
-		glPopMatrix();
-		glPushMatrix();
-			glTranslatef(-2, - ((altura) / 2), 2);
-			glRotatef(90, 0, 0, 1);
-			figura.cilindro(0.5, altura, 40);
-		glPopMatrix();
-		glPushMatrix();
-			glTranslatef(2, - ((altura) / 2), -2);
-			glRotatef(90, 0, 0, 1);
-			figura.cilindro(0.5, altura, 40);
-		glPopMatrix();
-		glPushMatrix();
-			glTranslatef(2, - ((altura) / 2), 2);
-			glRotatef(90, 0, 0, 1);
-			figura.cilindro(0.5, altura, 40);
-		glPopMatrix();
+	glPushMatrix();
+	glTranslatef(-2, 0, 0);
+	glRotatef(-90, 0, 1, 0);
+	figura.cilindro(0.5, 8, 40);
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(2, 0, 0);
+	glRotatef(-90, 0, 1, 0);
+	figura.cilindro(0.5, 8, 40);
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(0, 0, -2);
+	//glRotatef(-90, 0, 1, 0);
+	figura.cilindro(0.5, 4, 40);
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(0, 0, 2);
+	//glRotatef(-90, 0, 1, 0);
+	figura.cilindro(0.5, 4, 40);
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(-2, -((altura) / 2), -2);
+	glRotatef(90, 0, 0, 1);
+	figura.cilindro(0.5, altura, 40);
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(-2, -((altura) / 2), 2);
+	glRotatef(90, 0, 0, 1);
+	figura.cilindro(0.5, altura, 40);
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(2, -((altura) / 2), -2);
+	glRotatef(90, 0, 0, 1);
+	figura.cilindro(0.5, altura, 40);
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(2, -((altura) / 2), 2);
+	glRotatef(90, 0, 0, 1);
+	figura.cilindro(0.5, altura, 40);
+	glPopMatrix();
 	glPopMatrix();
 
 
@@ -567,7 +587,7 @@ void RusaRampa(float altura) {
 
 	glPushMatrix();
 	glPushMatrix();
-	glTranslatef(0,2,0);
+	glTranslatef(0, 2, 0);
 	glRotated(30, 1, 0, 0);
 	glPushMatrix();
 	glTranslatef(-2, 0, 0);
@@ -591,22 +611,22 @@ void RusaRampa(float altura) {
 	glPopMatrix();
 	glPopMatrix();
 	glPushMatrix();
-	glTranslatef(-2, -1+((altura2) / 2), -2);
+	glTranslatef(-2, -1 + ((altura2) / 2), -2);
 	glRotatef(90, 0, 0, 1);
 	figura.cilindro(0.5, altura2, 40);
 	glPopMatrix();
 	glPushMatrix();
-	glTranslatef(-2, 1-((altura) / 2), 2);
+	glTranslatef(-2, 1 - ((altura) / 2), 2);
 	glRotatef(90, 0, 0, 1);
 	figura.cilindro(0.5, altura, 40);
 	glPopMatrix();
 	glPushMatrix();
-	glTranslatef(2, -1+((altura2) / 2), -2);
+	glTranslatef(2, -1 + ((altura2) / 2), -2);
 	glRotatef(90, 0, 0, 1);
 	figura.cilindro(0.5, altura2, 40);
 	glPopMatrix();
 	glPushMatrix();
-	glTranslatef(2, 1-((altura) / 2), 2);
+	glTranslatef(2, 1 - ((altura) / 2), 2);
 	glRotatef(90, 0, 0, 1);
 	figura.cilindro(0.5, altura, 40);
 	glPopMatrix();
@@ -616,28 +636,28 @@ void RusaRampa(float altura) {
 }
 
 void carrito() {
-	
+
 	glPushMatrix();
 	glTranslatef(0, 0, -2.5);
-	glRotatef(-90,1,0,0);
-	figura.cono(3,2,40,0);
+	glRotatef(-90, 1, 0, 0);
+	figura.cono(3, 2, 40, 0);
 	glPopMatrix();
 	glPushMatrix();
 	//glTranslatef(0,0,3.5);
 	glRotatef(-90, 0, 1, 0);
-	figura.cilindro(2,5,40);
+	figura.cilindro(2, 5, 40);
 	glPopMatrix();
 	glPushMatrix();
 	glTranslatef(0, 0, 2.5);
-	figura.esfera(2,40,40,0);
+	figura.esfera(2, 40, 40, 0);
 	glPopMatrix();
 	glPushMatrix();
-		glTranslatef(0,-2,-2);
+	glTranslatef(0, -2, -2);
 	//glRotatef(-90, 0, 1, 0);
 	figura.cilindro(0.5, 4, 40);
 	glPopMatrix();
 	glPushMatrix();
-		glTranslatef(0,-2, 2);
+	glTranslatef(0, -2, 2);
 	//glRotatef(-90, 0, 1, 0);
 	figura.cilindro(0.5, 4, 40);
 	glPopMatrix();
@@ -794,27 +814,7 @@ void display(void) {
 
 	///////////////////////////////////////////
 
-	//////////////////Juego Aviones///////////////////
 
-	//Avion1
-	glPushMatrix();
-	glTranslatef(-30,0,-30);
-	glScalef(2, 2, 2);
-	glPushMatrix();
-	
-	glRotatef(giroAvion1, 0, 1, 0);
-	glRotatef(30, 0, 0, 1);
-	figura.cilindroVertical(0.1, -10, 10, 0);
-	glDisable(GL_COLOR_MATERIAL);
-	glTranslatef(0, -10, 0);
-	glScalef(0.03, 0.03, 0.03);
-	avion1.GLrender(NULL, _SHADED, 1.0);  //_WIRED O _POINTS
-	glEnable(GL_COLOR_MATERIAL);
-	glPopMatrix();
-	glLoadIdentity();
-	glPopMatrix();
-
-	//////////////////////////////////////////
 
 		/* SKYBOX */
 
@@ -824,7 +824,7 @@ void display(void) {
 	glEnable(GL_LIGHTING);
 	glPopMatrix();
 
-	/* FIN SKYBOX */
+	/*FIN SKYBOX */
 
 	//simbolo parque de diversiones 
 	/*glPushMatrix();
@@ -836,35 +836,33 @@ void display(void) {
 	glEnable(GL_LIGHTING);
 	glPopMatrix();*/
 
-
 	// Montaña rusa
 
 	glPushMatrix();
-		glPushMatrix();
-			glTranslatef(-72.0f, -28.5f, 30.0f);
-			for (int i = 0; i < 25; i++)
-			{
-				ColocarCarrilIda(4, 2);
-			}
-		glPopMatrix();
-
-		glPushMatrix();
-			glTranslatef(-97.0f, -28.5f, 30.0f);
-			for (int i = 0; i < 25; i++)
-			{
-				ColocarCarrilIda(4, 2);
-			}
-		glPopMatrix();
-		glPushMatrix();
-		glTranslatef(-72.0f, -25.5f, 25.0f);
-		carrito();
-		glPopMatrix();
-		glPushMatrix();
-		glTranslatef(-72.0f, -28.5f, -77.0f);
-		RusaRampa(4);
-		glPopMatrix();
+	glPushMatrix();
+	glTranslatef(-72.0f, -28.5f, 30.0f);
+	for (int i = 0; i < 25; i++)
+	{
+		ColocarCarrilIda(4, 2);
+	}
 	glPopMatrix();
 
+	glPushMatrix();
+	glTranslatef(-97.0f, -28.5f, 30.0f);
+	for (int i = 0; i < 25; i++)
+	{
+		ColocarCarrilIda(4, 2);
+	}
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(-72.0f, -25.5f, 25.0f);
+	carrito();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(-72.0f, -28.5f, -77.0f);
+	RusaRampa(4);
+	glPopMatrix();
+	glPopMatrix();
 
 	//Cancha de Futbol
 
@@ -885,7 +883,7 @@ void display(void) {
 	glEnable(GL_LIGHTING);
 	glPopMatrix();
 
-  
+
 	//		ASFALTO ESTACIONAMIENTO
 	glPushMatrix();
 
@@ -897,9 +895,9 @@ void display(void) {
 
 	glPopMatrix();	// TERMINA ASFALTO
 
-	
 
-/* EJES DE REFERENCIA */
+
+/* EJES DE REFERENCIA
 
 	glPushMatrix();
 	glDisable(GL_TEXTURE_2D);
@@ -920,107 +918,107 @@ void display(void) {
 	glEnable(GL_LIGHTING);
 	glPopMatrix();
 
-	/* FIN EJES DE REFERENCIA */
-	
+	FIN EJES DE REFERENCIA */
+
 	/* Martillo */
 	glPushMatrix();
-		glTranslatef(80.0f, -29.0f, -60.0f);
-		glDisable(GL_LIGHTING);
-		renders.cube(45.0, 1.0, 45.0,
-			wood.GLindex, wood.GLindex, wood.GLindex,		//	BASE 
-			wood.GLindex, wood.GLindex, wood.GLindex);
-		glEnable(GL_LIGHTING);
+	glTranslatef(80.0f, -29.0f, -60.0f);
+	glDisable(GL_LIGHTING);
+	renders.cube(45.0, 1.0, 45.0,
+		wood.GLindex, wood.GLindex, wood.GLindex,		//	BASE 
+		wood.GLindex, wood.GLindex, wood.GLindex);
+	glEnable(GL_LIGHTING);
 	glPopMatrix();
 
 	glPushMatrix();
-		glTranslatef(80.0f, -15.0f, -60.0f);
-		glDisable(GL_LIGHTING);
-		//glRotatef(90, 1, 1, 0);							// Mango del martillo
-		obj.prisma(25, 4, 4, Camiseta.GLindex);
-		glEnable(GL_LIGHTING);
+	glTranslatef(80.0f, -15.0f, -60.0f);
+	glDisable(GL_LIGHTING);
+	//glRotatef(90, 1, 1, 0);							// Mango del martillo
+	obj.prisma(25, 4, 4, Camiseta.GLindex);
+	glEnable(GL_LIGHTING);
 	glPopMatrix();
 
 	glPushMatrix();
-		glTranslatef(80.0f, 0.0f, -60.0f);
-		glRotatef(anim_soporte + 50, 0.0, 0.0, 1.0);
-		
-		glPushMatrix();
-			glTranslatef(0.0f, 0.0f, 0.0f);
-			glDisable(GL_LIGHTING);
-			glRotatef(90, 1, 0, 0);							// Cilindro giratorio martillo
-			obj.cilindroTextura(3, 3, 12, wood.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
+	glTranslatef(80.0f, 0.0f, -60.0f);
+	glRotatef(anim_soporte + 50, 0.0, 0.0, 1.0);
 
-		glPushMatrix();
-			glTranslatef(0.0f, -5.0f, 4.0f);
-			glDisable(GL_LIGHTING);
-			glRotatef(90, 0, 0, 1);							// Martillo giratorio derecho
-			obj.prisma(2, 29, 2, wood.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
-		
-		glPushMatrix();
-			glTranslatef(0.0f, -22.0f, 4.0f);
-			glDisable(GL_LIGHTING);
-			//glRotatef(90, 0, 1, 0);							// Cabina del martillo derecho
-			renders.cube(15.0, 5.0, 5.0,
-				wood.GLindex, wood.GLindex, wood.GLindex,		//	BASE 
-				wood.GLindex, asiento.GLindex, wood.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
+	glPushMatrix();
+	glTranslatef(0.0f, 0.0f, 0.0f);
+	glDisable(GL_LIGHTING);
+	glRotatef(90, 1, 0, 0);							// Cilindro giratorio martillo
+	obj.cilindroTextura(3, 3, 12, wood.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
 
-		glPushMatrix();
-			glTranslatef(0.0f, 11.0f, 4.0f);
-			glDisable(GL_LIGHTING);
-			//glRotatef(90, 0, 1, 0);							// Contrapeso del martillo derecho
-			renders.cube(8.0, 3.0, 5.0,
-				wood.GLindex, wood.GLindex, wood.GLindex,		//	BASE 
-				wood.GLindex, wood.GLindex, wood.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
+	glPushMatrix();
+	glTranslatef(0.0f, -5.0f, 4.0f);
+	glDisable(GL_LIGHTING);
+	glRotatef(90, 0, 0, 1);							// Martillo giratorio derecho
+	obj.prisma(2, 29, 2, wood.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(0.0f, -22.0f, 4.0f);
+	glDisable(GL_LIGHTING);
+	//glRotatef(90, 0, 1, 0);							// Cabina del martillo derecho
+	renders.cube(15.0, 5.0, 5.0,
+		wood.GLindex, wood.GLindex, wood.GLindex,		//	BASE 
+		wood.GLindex, asiento.GLindex, wood.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(0.0f, 11.0f, 4.0f);
+	glDisable(GL_LIGHTING);
+	//glRotatef(90, 0, 1, 0);							// Contrapeso del martillo derecho
+	renders.cube(8.0, 3.0, 5.0,
+		wood.GLindex, wood.GLindex, wood.GLindex,		//	BASE 
+		wood.GLindex, wood.GLindex, wood.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
 
 	glPopMatrix();
 
 	glPushMatrix();
-		glTranslatef(80.0f, 0.0f, -60.0f);
-		glRotatef(anim_soporte + 50, 0.0, 0.0, -1.0);
-		
-		glPushMatrix();
-			glTranslatef(0.0f, 0.0f, -3.0f);
-			glDisable(GL_LIGHTING);
-			glRotatef(90, 1, 0, 0);							// Cilindro giratorio martillo
-			obj.cilindroTextura(3, 3, 12, wood.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
+	glTranslatef(80.0f, 0.0f, -60.0f);
+	glRotatef(anim_soporte + 50, 0.0, 0.0, -1.0);
 
-		glPushMatrix();
-			glTranslatef(0.0f, -5.0f, -4.0f);
-			glDisable(GL_LIGHTING);
-			glRotatef(90, 0, 0, 1);							// Martillo giratorio izquierdo
-			obj.prisma(2, 29, 2, wood.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
-		
-		glPushMatrix();
-			glTranslatef(0.0f, -22.0f, -4.0f);
-			glDisable(GL_LIGHTING);
-			//glRotatef(90, 0, 1, 0);							// Cabina del martillo izquierdo
-			renders.cube(15.0, 5.0, 5.0,
-				wood.GLindex, wood.GLindex, wood.GLindex,		//	BASE 
-				wood.GLindex, wood.GLindex, asiento.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
+	glPushMatrix();
+	glTranslatef(0.0f, 0.0f, -3.0f);
+	glDisable(GL_LIGHTING);
+	glRotatef(90, 1, 0, 0);							// Cilindro giratorio martillo
+	obj.cilindroTextura(3, 3, 12, wood.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
 
-		glPushMatrix();
-			glTranslatef(0.0f, 11.0f, -4.0f);
-			glDisable(GL_LIGHTING);
-			//glRotatef(90, 0, 1, 0);							// Contrapeso del martillo izquierdo
-			renders.cube(8.0, 3.0, 5.0,
-				wood.GLindex, wood.GLindex, wood.GLindex,		//	BASE 
-				wood.GLindex, wood.GLindex, wood.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
+	glPushMatrix();
+	glTranslatef(0.0f, -5.0f, -4.0f);
+	glDisable(GL_LIGHTING);
+	glRotatef(90, 0, 0, 1);							// Martillo giratorio izquierdo
+	obj.prisma(2, 29, 2, wood.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(0.0f, -22.0f, -4.0f);
+	glDisable(GL_LIGHTING);
+	//glRotatef(90, 0, 1, 0);							// Cabina del martillo izquierdo
+	renders.cube(15.0, 5.0, 5.0,
+		wood.GLindex, wood.GLindex, wood.GLindex,		//	BASE 
+		wood.GLindex, wood.GLindex, asiento.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(0.0f, 11.0f, -4.0f);
+	glDisable(GL_LIGHTING);
+	//glRotatef(90, 0, 1, 0);							// Contrapeso del martillo izquierdo
+	renders.cube(8.0, 3.0, 5.0,
+		wood.GLindex, wood.GLindex, wood.GLindex,		//	BASE 
+		wood.GLindex, wood.GLindex, wood.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
 
 	glPopMatrix();
 
@@ -1038,87 +1036,87 @@ void display(void) {
 	glPopMatrix();
 
 	glPushMatrix();
-		glTranslatef(80.0f, -25.0f, -10.0f);
-		glDisable(GL_LIGHTING);
-		renders.cube(25.0, 10.0, 25.0,
-			CuerpoPulpo.GLindex, CuerpoPulpo.GLindex, CuerpoPulpo.GLindex,		//	Base del pulpo 
-			CuerpoPulpo.GLindex, CuerpoPulpo.GLindex, CuerpoPulpo.GLindex);
-		glEnable(GL_LIGHTING);
-	glPopMatrix();
-	
-	glPushMatrix();
-		glTranslatef(80.0f, -20.0f, -10.0f);
-		glDisable(GL_LIGHTING);
-		glRotatef(anim_soporte + 50, 0.0, 1.0, 0.0);
-		obj.cilindroTextura(15, 1, 12, wood.GLindex);		// Base giratoria del pulpo
-		glEnable(GL_LIGHTING);
-	glPopMatrix();
-	
-	glPushMatrix();
-		glTranslatef(80.0f, -19.0f, -10.0f);
-		glDisable(GL_LIGHTING);
-		glRotatef(anim_soporte + 50, 0.0, 1.0, 0.0);
-		obj.cilindroTextura(8, 10, 12, Kraken.GLindex);		// Cuerpo del pulpo
-		glEnable(GL_LIGHTING);
+	glTranslatef(80.0f, -25.0f, -10.0f);
+	glDisable(GL_LIGHTING);
+	renders.cube(25.0, 10.0, 25.0,
+		CuerpoPulpo.GLindex, CuerpoPulpo.GLindex, CuerpoPulpo.GLindex,		//	Base del pulpo 
+		CuerpoPulpo.GLindex, CuerpoPulpo.GLindex, CuerpoPulpo.GLindex);
+	glEnable(GL_LIGHTING);
 	glPopMatrix();
 
 	glPushMatrix();
-		glTranslatef(80.0f, -5.0f, -10.0f);
-		glDisable(GL_LIGHTING);
-		glRotatef(anim_soporte + 50, 0.0, 1.0, 0.0);
-		obj.esfera(10, 12, 12, DavidJones.GLindex);				// Cabeza del pulpo
-		glEnable(GL_LIGHTING);
+	glTranslatef(80.0f, -20.0f, -10.0f);
+	glDisable(GL_LIGHTING);
+	glRotatef(anim_soporte + 50, 0.0, 1.0, 0.0);
+	obj.cilindroTextura(15, 1, 12, wood.GLindex);		// Base giratoria del pulpo
+	glEnable(GL_LIGHTING);
 	glPopMatrix();
-	
+
+	glPushMatrix();
+	glTranslatef(80.0f, -19.0f, -10.0f);
+	glDisable(GL_LIGHTING);
+	glRotatef(anim_soporte + 50, 0.0, 1.0, 0.0);
+	obj.cilindroTextura(8, 10, 12, Kraken.GLindex);		// Cuerpo del pulpo
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(80.0f, -5.0f, -10.0f);
+	glDisable(GL_LIGHTING);
+	glRotatef(anim_soporte + 50, 0.0, 1.0, 0.0);
+	obj.esfera(10, 12, 12, DavidJones.GLindex);				// Cabeza del pulpo
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
+
 	glPushMatrix();										// primer tentaculo del pulpo
-		glTranslatef(80.0f, -20.0f, -10.0f);
-		glRotatef(anim_soporte + 50, 0.0, 1.0, 0.0);
-		
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(12.0f, 1.0f, 0.0f);			// primer tentaculo del pulpo
-			//glRotatef(45, 1, 0, 0);
-			obj.cilindroTextura(2, 6, 12, Ventosa.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
-	
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(12.0f, 6.0f, 0.0f);			// primer tentaculo del pulpo
-			glRotatef(45, 0, 0, -1);
-			obj.cilindroTextura(2, 15, 12, Ventosa.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
-		
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(31.0f, 16.0f, 0.0f);			// primer tentaculo del pulpo
-			glRotatef(90, 0, 0, 1);
-			//glRotatef(90, 0, 1, 0);
-			obj.cilindroTextura(2, 10, 12, Ventosa.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
+	glTranslatef(80.0f, -20.0f, -10.0f);
+	glRotatef(anim_soporte + 50, 0.0, 1.0, 0.0);
 
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(30.0f, 5.0f, 0.0f);			// primer tentaculo del pulpo
-			//glRotatef(90, 0, 0, 1);
-			//glRotatef(90, 0, 1, 0);
-			obj.cilindroTextura(1, 10, 12, Ventosa.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(12.0f, 1.0f, 0.0f);			// primer tentaculo del pulpo
+	//glRotatef(45, 1, 0, 0);
+	obj.cilindroTextura(2, 6, 12, Ventosa.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
 
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(30.0f, 3.0f, 0.0f);			// primer tentaculo del pulpo
-			//glRotatef(90, 0, 0, 1);
-			//glRotatef(90, 0, 1, 0);
-			glRotatef(anim_soporte + 50, 0.0, -1.0, 0.0);
-			renders.cube(10.0, 4.0, 5.0,
-				wood.GLindex, wood.GLindex, wood.GLindex,		//	Cabina giratoria 
-				wood.GLindex, wood.GLindex, asiento.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(12.0f, 6.0f, 0.0f);			// primer tentaculo del pulpo
+	glRotatef(45, 0, 0, -1);
+	obj.cilindroTextura(2, 15, 12, Ventosa.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
+
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(31.0f, 16.0f, 0.0f);			// primer tentaculo del pulpo
+	glRotatef(90, 0, 0, 1);
+	//glRotatef(90, 0, 1, 0);
+	obj.cilindroTextura(2, 10, 12, Ventosa.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
+
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(30.0f, 5.0f, 0.0f);			// primer tentaculo del pulpo
+	//glRotatef(90, 0, 0, 1);
+	//glRotatef(90, 0, 1, 0);
+	obj.cilindroTextura(1, 10, 12, Ventosa.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
+
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(30.0f, 3.0f, 0.0f);			// primer tentaculo del pulpo
+	//glRotatef(90, 0, 0, 1);
+	//glRotatef(90, 0, 1, 0);
+	glRotatef(anim_soporte + 50, 0.0, -1.0, 0.0);
+	renders.cube(10.0, 4.0, 5.0,
+		wood.GLindex, wood.GLindex, wood.GLindex,		//	Cabina giratoria 
+		wood.GLindex, wood.GLindex, asiento.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
 
 	glPopMatrix();
 
@@ -1126,323 +1124,323 @@ void display(void) {
 	glTranslatef(80.0f, -20.0f, -10.0f);
 	glRotatef(anim_soporte + 50, 0.0, 1.0, 0.0);
 
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(-12.0f, 1.0f, 0.0f);			// Segundo tentaculo del pulpo
-			//glRotatef(45, 1, 0, 0);
-			obj.cilindroTextura(2, 6, 12, Ventosa.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
-
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(-12.0f, 6.0f, 0.0f);			// Segundo tentaculo del pulpo
-			glRotatef(45, 0, 0, 1);
-			obj.cilindroTextura(2, 15, 12, Ventosa.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
-
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(-21.0f, 16.0f, 0.0f);			// Segundo tentaculo del pulpo
-			glRotatef(90, 0, 0, 1);
-			//glRotatef(90, 0, 1, 0);
-			obj.cilindroTextura(2, 10, 12, Ventosa.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
-		
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(-30.0f, 5.0f, 0.0f);			// Segundo tentaculo del pulpo
-			//glRotatef(90, 0, 0, 1);
-			//glRotatef(90, 0, 1, 0);
-			obj.cilindroTextura(1, 10, 12, Ventosa.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
-		
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(-30.0f, 3.0f, 0.0f);			// Segundo tentaculo del pulpo
-			//glRotatef(90, 0, 0, 1);
-			//glRotatef(90, 0, 1, 0);
-			glRotatef(anim_soporte + 50, 0.0, -1.0, 0.0);
-			renders.cube(10.0, 4.0, 5.0,
-				wood.GLindex, wood.GLindex, wood.GLindex,		//	Cabina giratoria 
-				wood.GLindex, wood.GLindex, asiento.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
-	
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(-12.0f, 1.0f, 0.0f);			// Segundo tentaculo del pulpo
+	//glRotatef(45, 1, 0, 0);
+	obj.cilindroTextura(2, 6, 12, Ventosa.GLindex);
+	glEnable(GL_LIGHTING);
 	glPopMatrix();
-	
+
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(-12.0f, 6.0f, 0.0f);			// Segundo tentaculo del pulpo
+	glRotatef(45, 0, 0, 1);
+	obj.cilindroTextura(2, 15, 12, Ventosa.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
+
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(-21.0f, 16.0f, 0.0f);			// Segundo tentaculo del pulpo
+	glRotatef(90, 0, 0, 1);
+	//glRotatef(90, 0, 1, 0);
+	obj.cilindroTextura(2, 10, 12, Ventosa.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
+
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(-30.0f, 5.0f, 0.0f);			// Segundo tentaculo del pulpo
+	//glRotatef(90, 0, 0, 1);
+	//glRotatef(90, 0, 1, 0);
+	obj.cilindroTextura(1, 10, 12, Ventosa.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
+
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(-30.0f, 3.0f, 0.0f);			// Segundo tentaculo del pulpo
+	//glRotatef(90, 0, 0, 1);
+	//glRotatef(90, 0, 1, 0);
+	glRotatef(anim_soporte + 50, 0.0, -1.0, 0.0);
+	renders.cube(10.0, 4.0, 5.0,
+		wood.GLindex, wood.GLindex, wood.GLindex,		//	Cabina giratoria 
+		wood.GLindex, wood.GLindex, asiento.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
+
+	glPopMatrix();
+
 	glPushMatrix();										// Tercer tentaculo del pulpo
 	glTranslatef(80.0f, -20.0f, -10.0f);
 	glRotatef(anim_soporte + 50, 0.0, 1.0, 0.0);
 
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(0.0f, 1.0f, 12.0f);			// Tercer tentaculo del pulpo
-			//glRotatef(45, 1, 0, 0);
-			obj.cilindroTextura(2, 6, 12, Ventosa.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(0.0f, 1.0f, 12.0f);			// Tercer tentaculo del pulpo
+	//glRotatef(45, 1, 0, 0);
+	obj.cilindroTextura(2, 6, 12, Ventosa.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
 
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(0.0f, 6.0f, 12.0f);			// Tercer tentaculo del pulpo
-			glRotatef(45, 1, 0, 0);
-			obj.cilindroTextura(2, 15, 12, Ventosa.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(0.0f, 6.0f, 12.0f);			// Tercer tentaculo del pulpo
+	glRotatef(45, 1, 0, 0);
+	obj.cilindroTextura(2, 15, 12, Ventosa.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
 
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(0.0f, 16.0f, 21.0f);			// Tercer tentaculo del pulpo
-			glRotatef(90, 1, 0, 0);
-			//glRotatef(90, 0, 1, 0);
-			obj.cilindroTextura(2, 10, 12, Ventosa.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(0.0f, 16.0f, 21.0f);			// Tercer tentaculo del pulpo
+	glRotatef(90, 1, 0, 0);
+	//glRotatef(90, 0, 1, 0);
+	obj.cilindroTextura(2, 10, 12, Ventosa.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
 
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(0.0f, 5.0f, 30.0f);			// Tercer tentaculo del pulpo
-			//glRotatef(90, 0, 0, 1);
-			//glRotatef(90, 0, 1, 0);
-			obj.cilindroTextura(1, 10, 12, Ventosa.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(0.0f, 5.0f, 30.0f);			// Tercer tentaculo del pulpo
+	//glRotatef(90, 0, 0, 1);
+	//glRotatef(90, 0, 1, 0);
+	obj.cilindroTextura(1, 10, 12, Ventosa.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
 
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(0.0f, 3.0f, 30.0f);			// Tercer tentaculo del pulpo
-			//glRotatef(90, 0, 0, 1);
-			//glRotatef(90, 0, 1, 0);
-			glRotatef(anim_soporte + 50, 0.0, -1.0, 0.0);
-			renders.cube(10.0, 4.0, 5.0,
-				wood.GLindex, wood.GLindex, wood.GLindex,		//	Cabina giratoria 
-				wood.GLindex, wood.GLindex, asiento.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(0.0f, 3.0f, 30.0f);			// Tercer tentaculo del pulpo
+	//glRotatef(90, 0, 0, 1);
+	//glRotatef(90, 0, 1, 0);
+	glRotatef(anim_soporte + 50, 0.0, -1.0, 0.0);
+	renders.cube(10.0, 4.0, 5.0,
+		wood.GLindex, wood.GLindex, wood.GLindex,		//	Cabina giratoria 
+		wood.GLindex, wood.GLindex, asiento.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
 
-		glPopMatrix();
+	glPopMatrix();
 
 	glPushMatrix();										// Cuarto tentaculo del pulpo
 	glTranslatef(80.0f, -20.0f, -10.0f);
 	glRotatef(anim_soporte + 50, 0.0, 1.0, 0.0);
 
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(0.0f, 1.0f, -12.0f);			// Cuarto tentaculo del pulpo
-			//glRotatef(45, 1, 0, 0);
-			obj.cilindroTextura(2, 6, 12, Ventosa.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
-			
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(0.0f, 6.0f, -12.0f);			// Cuarto tentaculo del pulpo
-			glRotatef(45, -1, 0, 0);
-			obj.cilindroTextura(2, 15, 12, Ventosa.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
-	
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(0.0f, 16.0f, -31.0f);			// Cuarto tentaculo del pulpo
-			glRotatef(90, 1, 0, 0);
-			//glRotatef(90, 0, 1, 0);
-			obj.cilindroTextura(2, 10, 12, Ventosa.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(0.0f, 1.0f, -12.0f);			// Cuarto tentaculo del pulpo
+	//glRotatef(45, 1, 0, 0);
+	obj.cilindroTextura(2, 6, 12, Ventosa.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
 
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(0.0f, 5.0f, -30.0f);			// Cuarto tentaculo del pulpo
-			//glRotatef(90, 0, 0, 1);
-			//glRotatef(90, 0, 1, 0);
-			obj.cilindroTextura(1, 10, 12, Ventosa.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(0.0f, 6.0f, -12.0f);			// Cuarto tentaculo del pulpo
+	glRotatef(45, -1, 0, 0);
+	obj.cilindroTextura(2, 15, 12, Ventosa.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
 
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(0.0f, 3.0f, -30.0f);			// Cuarto tentaculo del pulpo
-			//glRotatef(90, 0, 0, 1);
-			//glRotatef(90, 0, 1, 0);
-			glRotatef(anim_soporte + 50, 0.0, -1.0, 0.0);
-			renders.cube(10.0, 4.0, 5.0,
-				wood.GLindex, wood.GLindex, wood.GLindex,		//	Cabina giratoria 
-				wood.GLindex, wood.GLindex, asiento.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(0.0f, 16.0f, -31.0f);			// Cuarto tentaculo del pulpo
+	glRotatef(90, 1, 0, 0);
+	//glRotatef(90, 0, 1, 0);
+	obj.cilindroTextura(2, 10, 12, Ventosa.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
+
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(0.0f, 5.0f, -30.0f);			// Cuarto tentaculo del pulpo
+	//glRotatef(90, 0, 0, 1);
+	//glRotatef(90, 0, 1, 0);
+	obj.cilindroTextura(1, 10, 12, Ventosa.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
+
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(0.0f, 3.0f, -30.0f);			// Cuarto tentaculo del pulpo
+	//glRotatef(90, 0, 0, 1);
+	//glRotatef(90, 0, 1, 0);
+	glRotatef(anim_soporte + 50, 0.0, -1.0, 0.0);
+	renders.cube(10.0, 4.0, 5.0,
+		wood.GLindex, wood.GLindex, wood.GLindex,		//	Cabina giratoria 
+		wood.GLindex, wood.GLindex, asiento.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
 
 	glPopMatrix();
 
 	glPushMatrix();										// Quinto tentaculo del pulpo
-		glTranslatef(80.0f, -20.0f, -10.0f);
-		glRotatef(anim_soporte + 50, 0.0, 1.0, 0.0);
+	glTranslatef(80.0f, -20.0f, -10.0f);
+	glRotatef(anim_soporte + 50, 0.0, 1.0, 0.0);
 
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(8.0f, 1.0f, 8.0f);			// Quinto tentaculo del pulpo
-			//glRotatef(45, 1, 0, 0);
-			obj.cilindroTextura(2, 6, 12, Ventosa.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(8.0f, 1.0f, 8.0f);			// Quinto tentaculo del pulpo
+	//glRotatef(45, 1, 0, 0);
+	obj.cilindroTextura(2, 6, 12, Ventosa.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
 
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(8.0f, 6.0f, 8.0f);			// Quinto tentaculo del pulpo
-			glRotatef(45, 1, 1, -1);
-			obj.cilindroTextura(2, 15, 12, Ventosa.GLindex);
-			//glRotatef(45, 0, 1, 0);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(8.0f, 6.0f, 8.0f);			// Quinto tentaculo del pulpo
+	glRotatef(45, 1, 1, -1);
+	obj.cilindroTextura(2, 15, 12, Ventosa.GLindex);
+	//glRotatef(45, 0, 1, 0);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
 
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(15.0f, 17.0f, 12.5f);			// Quinto tentaculo del pulpo
-			//glRotatef(45, 1, 1, 0);
-			//glRotatef(90, 0, 1, 0);
-			obj.cilindroTextura(2, 10, 12, Ventosa.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(15.0f, 17.0f, 12.5f);			// Quinto tentaculo del pulpo
+	//glRotatef(45, 1, 1, 0);
+	//glRotatef(90, 0, 1, 0);
+	obj.cilindroTextura(2, 10, 12, Ventosa.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
 
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(15.0f, 26.0f, 12.5f);			// Quinto tentaculo del pulpo
-			glRotatef(45, 1, 1, -1);
-			//glRotatef(90, 0, 1, 0);
-			obj.cilindroTextura(2, 10, 12, Ventosa.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(15.0f, 26.0f, 12.5f);			// Quinto tentaculo del pulpo
+	glRotatef(45, 1, 1, -1);
+	//glRotatef(90, 0, 1, 0);
+	obj.cilindroTextura(2, 10, 12, Ventosa.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
 
 	glPopMatrix();
 
 	glPushMatrix();										// Sexto tentaculo del pulpo
-		glTranslatef(80.0f, -20.0f, -10.0f);
-		glRotatef(anim_soporte + 50, 0.0, 1.0, 0.0);
+	glTranslatef(80.0f, -20.0f, -10.0f);
+	glRotatef(anim_soporte + 50, 0.0, 1.0, 0.0);
 
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(-8.0f, 1.0f, 8.0f);			// Sexto tentaculo del pulpo
-			//glRotatef(45, 1, 0, 0);
-			obj.cilindroTextura(2, 6, 12, Ventosa.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(-8.0f, 1.0f, 8.0f);			// Sexto tentaculo del pulpo
+	//glRotatef(45, 1, 0, 0);
+	obj.cilindroTextura(2, 6, 12, Ventosa.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
 
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(-8.0f, 6.0f, 8.0f);			// Sexto tentaculo del pulpo
-			glRotatef(45, 1, 1, 1);
-			obj.cilindroTextura(2, 15, 12, Ventosa.GLindex);
-			//glRotatef(45, 0, 1, 0);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(-8.0f, 6.0f, 8.0f);			// Sexto tentaculo del pulpo
+	glRotatef(45, 1, 1, 1);
+	obj.cilindroTextura(2, 15, 12, Ventosa.GLindex);
+	//glRotatef(45, 0, 1, 0);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
 
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(-12.0f, 16.5f, 15.0f);			// Sexto tentaculo del pulpo
-			//glRotatef(45, 1, 1, 0);
-			//glRotatef(90, 0, 1, 0);
-			obj.cilindroTextura(2, 10, 12, Ventosa.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
-	
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(-12.0f, 25.5f, 15.0f);			// Sexto tentaculo del pulpo
-			glRotatef(45, 1, 1, 1);
-			//glRotatef(90, 0, 1, 0);
-			obj.cilindroTextura(2, 10, 12, Ventosa.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(-12.0f, 16.5f, 15.0f);			// Sexto tentaculo del pulpo
+	//glRotatef(45, 1, 1, 0);
+	//glRotatef(90, 0, 1, 0);
+	obj.cilindroTextura(2, 10, 12, Ventosa.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
+
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(-12.0f, 25.5f, 15.0f);			// Sexto tentaculo del pulpo
+	glRotatef(45, 1, 1, 1);
+	//glRotatef(90, 0, 1, 0);
+	obj.cilindroTextura(2, 10, 12, Ventosa.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
 
 	glPopMatrix();
 
 	glPushMatrix();										// Septimo tentaculo del pulpo
-		glTranslatef(80.0f, -20.0f, -10.0f);
-		glRotatef(anim_soporte + 50, 0.0, 1.0, 0.0);
+	glTranslatef(80.0f, -20.0f, -10.0f);
+	glRotatef(anim_soporte + 50, 0.0, 1.0, 0.0);
 
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(-8.0f, 1.0f, -8.0f);			// Septimo tentaculo del pulpo
-			//glRotatef(45, 1, 0, 0);
-			obj.cilindroTextura(2, 6, 12, Ventosa.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(-8.0f, 1.0f, -8.0f);			// Septimo tentaculo del pulpo
+	//glRotatef(45, 1, 0, 0);
+	obj.cilindroTextura(2, 6, 12, Ventosa.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
 
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(-8.0f, 6.0f, -8.0f);			// Septimo tentaculo del pulpo
-			glRotatef(45, -1, -1, 1);
-			obj.cilindroTextura(2, 15, 12, Ventosa.GLindex);
-			//glRotatef(45, 0, 1, 0);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(-8.0f, 6.0f, -8.0f);			// Septimo tentaculo del pulpo
+	glRotatef(45, -1, -1, 1);
+	obj.cilindroTextura(2, 15, 12, Ventosa.GLindex);
+	//glRotatef(45, 0, 1, 0);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
 
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(-12.0f, 16.5f, -15.0f);			// Septimo tentaculo del pulpo
-			//glRotatef(45, 1, 1, 0);
-			//glRotatef(90, 0, 1, 0);
-			obj.cilindroTextura(2, 10, 12, Ventosa.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
-	
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(-12.0f, 25.5f, -15.0f);			// Septimo tentaculo del pulpo
-			glRotatef(45, -1, -1, 1);
-			//glRotatef(90, 0, 1, 0);
-			obj.cilindroTextura(2, 10, 12, Ventosa.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(-12.0f, 16.5f, -15.0f);			// Septimo tentaculo del pulpo
+	//glRotatef(45, 1, 1, 0);
+	//glRotatef(90, 0, 1, 0);
+	obj.cilindroTextura(2, 10, 12, Ventosa.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
+
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(-12.0f, 25.5f, -15.0f);			// Septimo tentaculo del pulpo
+	glRotatef(45, -1, -1, 1);
+	//glRotatef(90, 0, 1, 0);
+	obj.cilindroTextura(2, 10, 12, Ventosa.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
 
 	glPopMatrix();
 
 	glPushMatrix();										// Octavo tentaculo del pulpo
-		glTranslatef(80.0f, -20.0f, -10.0f);
-		glRotatef(anim_soporte + 50, 0.0, 1.0, 0.0);
+	glTranslatef(80.0f, -20.0f, -10.0f);
+	glRotatef(anim_soporte + 50, 0.0, 1.0, 0.0);
 
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(8.0f, 1.0f, -8.0f);			// Octavo tentaculo del pulpo
-			//glRotatef(45, 1, 0, 0);
-			obj.cilindroTextura(2, 6, 12, Ventosa.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(8.0f, 1.0f, -8.0f);			// Octavo tentaculo del pulpo
+	//glRotatef(45, 1, 0, 0);
+	obj.cilindroTextura(2, 6, 12, Ventosa.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
 
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(8.0f, 6.0f, -8.0f);			// Octavo tentaculo del pulpo
-			glRotatef(45, -1, 1, -1);
-			obj.cilindroTextura(2, 15, 12, Ventosa.GLindex);
-			//glRotatef(45, 0, 1, 0);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(8.0f, 6.0f, -8.0f);			// Octavo tentaculo del pulpo
+	glRotatef(45, -1, 1, -1);
+	obj.cilindroTextura(2, 15, 12, Ventosa.GLindex);
+	//glRotatef(45, 0, 1, 0);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
 
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(12.0f, 16.5f, -15.0f);			// Octavo tentaculo del pulpo
-			//glRotatef(45, 1, 1, 0);
-			//glRotatef(90, 0, 1, 0);
-			obj.cilindroTextura(2, 10, 12, Ventosa.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(12.0f, 16.5f, -15.0f);			// Octavo tentaculo del pulpo
+	//glRotatef(45, 1, 1, 0);
+	//glRotatef(90, 0, 1, 0);
+	obj.cilindroTextura(2, 10, 12, Ventosa.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
 
-		glPushMatrix();
-			glDisable(GL_LIGHTING);
-			glTranslatef(12.0f, 25.5f, -15.0f);			// Octavo tentaculo del pulpo
-			glRotatef(45, -1, 1, -1);
-			//glRotatef(90, 0, 1, 0);
-			obj.cilindroTextura(2, 10, 12, Ventosa.GLindex);
-			glEnable(GL_LIGHTING);
-		glPopMatrix();
+	glPushMatrix();
+	glDisable(GL_LIGHTING);
+	glTranslatef(12.0f, 25.5f, -15.0f);			// Octavo tentaculo del pulpo
+	glRotatef(45, -1, 1, -1);
+	//glRotatef(90, 0, 1, 0);
+	obj.cilindroTextura(2, 10, 12, Ventosa.GLindex);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
 
 	glPopMatrix();
 	/* Fin del pulpo */
-	   
+
 	/* ENTRADA 1*/
 
 	glPushMatrix();
@@ -1506,7 +1504,7 @@ void display(void) {
 
 	/* Montaña Rusa  */
 
-	
+
 	/* Montaña rusa */
 
 	//		INICIO DE MODELOS EN 3DS
@@ -1515,7 +1513,7 @@ void display(void) {
 	glDisable(GL_COLOR_MATERIAL);		//	ACTIVAR COLORES PARA MODELOS 3D
 
 	// CASA DEL TERROR
-	
+
 	glPushMatrix();
 	glTranslatef(80, -29, 65);
 	glRotatef(90, 0, -1, 0);
@@ -1556,7 +1554,7 @@ void display(void) {
 	*/
 
 	// FIN DE CASA DEL TEORROR
-										
+
 	//		BANCAS
 
 	glPushMatrix();
@@ -2035,7 +2033,7 @@ void display(void) {
 	glTranslatef(35.0f, -30.0f, -85.5f);
 	tree.GLrender(NULL, _SHADED, 1.0);  //_WIRED O _POINTS
 	glPopMatrix();
-		
+
 	glPushMatrix();
 	glTranslatef(35.0f, -30.0f, -80.5f);
 	tree.GLrender(NULL, _SHADED, 1.0);  //_WIRED O _POINTS
@@ -2396,7 +2394,7 @@ void display(void) {
 	//	glRotatef(90, 0, 1.0, 0.0);
 	table.GLrender(NULL, _SHADED, 1.0);  //_WIRED O _POINTS
 	glPopMatrix();
-	
+
 	glPushMatrix();
 	glTranslatef(-35.0f, -30.0f, -65.5f);
 	glScalef(2.5, 2.5, 2.5);
@@ -2583,51 +2581,51 @@ void display(void) {
 	// COMIENZO DE PERSONAS
 
 	glPushMatrix();
-		glTranslatef(-40.0f, -38.0f, 15.0f);
-		glRotatef(45, 0, 1, 0);
-		glScalef(2.3, 2.3, 2.3);			///		PRUEBA
-		glTranslatef(movKit, 4, 0);
-		people.GLrender(NULL, _SHADED, 1.0);  //_WIRED O _POINTS
+	glTranslatef(-40.0f, -38.0f, 15.0f);
+	glRotatef(45, 0, 1, 0);
+	glScalef(2.3, 2.3, 2.3);			///		PRUEBA
+	glTranslatef(movKit, 4, 0);
+	people.GLrender(NULL, _SHADED, 1.0);  //_WIRED O _POINTS
 	glPopMatrix();
 
 	glPushMatrix();
-		glTranslatef(-40.0f, -38.0f, 18.0f);
-		glRotatef(45, 0, 1, 0);
-		glScalef(2.3, 2.3, 2.3);			///		PRUEBA
-		glTranslatef(movKit, 4, 0);
-		people.GLrender(NULL, _SHADED, 1.0);  //_WIRED O _POINTS
+	glTranslatef(-40.0f, -38.0f, 18.0f);
+	glRotatef(45, 0, 1, 0);
+	glScalef(2.3, 2.3, 2.3);			///		PRUEBA
+	glTranslatef(movKit, 4, 0);
+	people.GLrender(NULL, _SHADED, 1.0);  //_WIRED O _POINTS
 	glPopMatrix();
 
 	glPushMatrix();
-		glTranslatef(-40.0f, -38.0f, 20.0f);
-		glRotatef(45, 0, 1, 0);
-		glScalef(2.3, 2.3, 2.3);			///		PRUEBA
-		glTranslatef(movKit, 4, 0);
-		people.GLrender(NULL, _SHADED, 1.0);  //_WIRED O _POINTS
+	glTranslatef(-40.0f, -38.0f, 20.0f);
+	glRotatef(45, 0, 1, 0);
+	glScalef(2.3, 2.3, 2.3);			///		PRUEBA
+	glTranslatef(movKit, 4, 0);
+	people.GLrender(NULL, _SHADED, 1.0);  //_WIRED O _POINTS
 	glPopMatrix();
 
 	glPushMatrix();
-		glTranslatef(-40.0f, -38.0f, 25.0f);
-		glRotatef(90, 0, 1, 0);
-		glScalef(2.3, 2.3, 2.3);			///		PRUEBA
-		glTranslatef(movKit, 4, 0);
-		people.GLrender(NULL, _SHADED, 1.0);  //_WIRED O _POINTS
+	glTranslatef(-40.0f, -38.0f, 25.0f);
+	glRotatef(90, 0, 1, 0);
+	glScalef(2.3, 2.3, 2.3);			///		PRUEBA
+	glTranslatef(movKit, 4, 0);
+	people.GLrender(NULL, _SHADED, 1.0);  //_WIRED O _POINTS
 	glPopMatrix();
 
 	glPushMatrix();
-		glTranslatef(-40.0f, -30.0f, 28.0f);
-		glRotatef(180, 0, 1, 0);
-		glScalef(1, 1, 1);			///		PRUEBA
-		glTranslatef(0, 4, movKit);
-		balto.GLrender(NULL, _SHADED, 1.0);  //_WIRED O _POINTS
+	glTranslatef(-40.0f, -30.0f, 28.0f);
+	glRotatef(180, 0, 1, 0);
+	glScalef(1, 1, 1);			///		PRUEBA
+	glTranslatef(0, 4, movKit);
+	balto.GLrender(NULL, _SHADED, 1.0);  //_WIRED O _POINTS
 	glPopMatrix();
 
 	glPushMatrix();
-		glTranslatef(0.0f, 10.0f, 0.0f);
-		glRotatef(180, 0, 1, 0);
-		glScalef(1, 1, 1);			///		PRUEBA
-		glTranslatef(0, 4, movKit);
-		avion.GLrender(NULL, _SHADED, 1.0);  //_WIRED O _POINTS
+	glTranslatef(0.0f, 10.0f, 0.0f);
+	glRotatef(180, 0, 1, 0);
+	glScalef(1, 1, 1);			///		PRUEBA
+	glTranslatef(0, 4, movKit);
+	avion.GLrender(NULL, _SHADED, 1.0);  //_WIRED O _POINTS
 	glPopMatrix();
 
 	//			ANIMACION-----------------------------------------------------------------------------------
@@ -2640,10 +2638,10 @@ void display(void) {
 
 	glPushMatrix();
 	glTranslatef(-40.0f, -30.0f, 55.5f);
-	glScalef(1.0,1.0,1.0);
+	glScalef(1.0, 1.0, 1.0);
 	balto.GLrender(NULL, _SHADED, 1.0);  //_WIRED O _POINTS
 	glPopMatrix();
-	
+
 	glPushMatrix();
 	glTranslatef(-40.0f, -30.0f, -65.5f);
 	glScalef(2.0, 2.0, 2.0);
@@ -2664,18 +2662,73 @@ void display(void) {
 
 	glPushMatrix();
 	glTranslatef(-20.0f, -30.0f, -55.5f);
-	glScalef(1.0,1.0,1.0);
+	glScalef(1.0, 1.0, 1.0);
 	balto.GLrender(NULL, _SHADED, 1.0);  //_WIRED O _POINTS
 	glPopMatrix();
-	
+
 
 
 
 	// FIN DE PERSONAS
 
+	//////////////////Juego Aviones///////////////////
 
 
+	/////////////////////////////////////////////
+		//Poste Avion//
+	glPushMatrix();
+	glTranslatef(-30, 0, -30);
+	glScalef(3, 3, 3);
+	figura.cilindroVertical(0.5, -10, 10, 0);
 
+	glPopMatrix();
+
+	/////////////////////////////////
+		//Avion2
+	glPushMatrix();
+	glTranslatef(-30, 0, -30);
+	glRotatef(180, 0, 1, 0);
+	glScalef(2, 2, 2);
+
+	glPushMatrix();
+
+	glRotatef(giroAvion1, 0, 1, 0);
+	glRotatef(40, 0, 0, 1);
+	figura.cilindroVertical(0.1, -10, 10, 0);
+	glDisable(GL_COLOR_MATERIAL);
+	glTranslatef(0, -10, 0);
+	glScalef(0.03, 0.03, 0.03);
+	//glDisable(GL_LIGHTING);
+	avion1.GLrender(NULL, _SHADED, 1.0);  //_WIRED O _POINTS
+	//glEnable(GL_LIGHTING);
+
+	glEnable(GL_COLOR_MATERIAL);
+	glPopMatrix();
+
+	glPopMatrix();
+
+	//////////////////////////////////////////
+
+			//Avion1
+	glPushMatrix();
+	glTranslatef(-30, 0, -30);
+	glRotatef(360, 0, 1, 0);
+	glScalef(2, 2, 2);
+
+	glPushMatrix();
+	glRotatef(giroAvion1, 0, 1, 0);
+	glRotatef(40, 0, 0, 1);
+	figura.cilindroVertical(0.1, -10, 10, 0);
+	glDisable(GL_COLOR_MATERIAL);
+	glTranslatef(0, -10, 0);
+	glScalef(0.03, 0.03, 0.03);
+	avion1.GLrender(NULL, _SHADED, 1.0);  //_WIRED O _POINTS
+	glEnable(GL_COLOR_MATERIAL);
+	glPopMatrix();
+
+	glPopMatrix();
+
+	//////////////////////////////////////////
 
 
 	glEnable(GL_COLOR_MATERIAL); //	DESACTIVAR COLORES PARA MODELOS 3D
@@ -2687,6 +2740,8 @@ void display(void) {
 
 	glPopMatrix(); // FIN AREA DE DIBUJO
 	glPopMatrix(); // FIN CAMARA
+
+
 
 	glutSwapBuffers();
 }
@@ -2823,7 +2878,7 @@ void keyboard(unsigned char key, int x, int y) {
 		break;
 
 		//			FIN DE ANIMACION DE PERSONA
-		
+
 	case 'O':		//  ANimacion del carro al estacionamiento
 	case 'o':
 		g_fanimacion ^= true; //Activamos/desactivamos la animacíon
@@ -2980,18 +3035,18 @@ void animation() {
 	else
 		sideSkyBox += 0.00005;
 
-	
+
 	// Calculate the number of frames per one second:
 	//dwFrames++;
 	dwCurrentTime = GetTickCount(); // Even better to use timeGetTime()
 	dwElapsedTime = dwCurrentTime - dwLastUpdateTime;
 
 	if (dwElapsedTime >= 50)
-		{
-			rueda = (rueda - 10) % 360;
+	{
+		rueda = (rueda - 10) % 360;
 
-			dwLastUpdateTime = dwCurrentTime;
-		}
+		dwLastUpdateTime = dwCurrentTime;
+	}
 
 	if (dwElapsedTime >= 30)
 	{
@@ -3006,7 +3061,7 @@ void animation() {
 	}
 
 
-	
+
 
 	//		PERSONA
 
@@ -3059,7 +3114,7 @@ void animation() {
 }
 
 void audio() {
-	
+
 	PlaySound("feria.wav", NULL, SND_ASYNC | SND_FILENAME | SND_LOOP);
 }
 
