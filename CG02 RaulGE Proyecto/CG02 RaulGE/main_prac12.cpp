@@ -562,11 +562,59 @@ void Rusa(float altura) {
 
 }
 
+void RusaRampa(float altura) {
+	glPushMatrix();
+	glPushMatrix();
+	glRotated(45, 1, 0, 0);
+	glPushMatrix();
+	glTranslatef(-2, 0, 0);
+	glRotatef(-90, 0, 1, 0);
+	figura.cilindro(0.5, 8, 40);
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(2, 0, 0);
+	glRotatef(-90, 0, 1, 0);
+	figura.cilindro(0.5, 8, 40);
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(0, 0, -2);
+	//glRotatef(-90, 0, 1, 0);
+	figura.cilindro(0.5, 4, 40);
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(0, 0, 2);
+	//glRotatef(-90, 0, 1, 0);
+	figura.cilindro(0.5, 4, 40);
+	glPopMatrix();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(-2, -((altura) / 2), -2);
+	glRotatef(90, 0, 0, 1);
+	figura.cilindro(0.5, altura, 40);
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(-2, -((altura) / 2), 2);
+	glRotatef(90, 0, 0, 1);
+	figura.cilindro(0.5, altura, 40);
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(2, -((altura) / 2), -2);
+	glRotatef(90, 0, 0, 1);
+	figura.cilindro(0.5, altura, 40);
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(2, -((altura) / 2), 2);
+	glRotatef(90, 0, 0, 1);
+	figura.cilindro(0.5, altura, 40);
+	glPopMatrix();
+	glPopMatrix();
+
+
+}
+
 void carrito() {
+	
 	glPushMatrix();
-	glColor3f(220 / 256, 220 / 256, 200 / 256);
-	glPushMatrix();
-	glColor3f(214/255, 214/255, 194/255);
 	glTranslatef(0, 0, -2.5);
 	glRotatef(-90,1,0,0);
 	figura.cono(3,2,40,0);
@@ -598,8 +646,8 @@ void carrito() {
 	glPushMatrix();
 		glTranslatef(-2,-2,-2);
 	//glRotatef(-90, 0, 1, 0);
-	figura.cilindro(0.5, 0.2, 40);*/
-	glPopMatrix();
+	figura.cilindro(0.5, 0.2, 40);
+	glPopMatrix();*/
 }
 
 void ColocarCarrilIda(float LongitudRiel, float AlturaRiel) {
@@ -798,15 +846,20 @@ void display(void) {
 		glPopMatrix();
 
 		glPushMatrix();
-		glTranslatef(-97.0f, -28.5f, 30.0f);
-		for (int i = 0; i < 25; i++)
-		{
-			ColocarCarrilIda(4, 2);
-		}
+			glTranslatef(-97.0f, -28.5f, 30.0f);
+			for (int i = 0; i < 25; i++)
+			{
+				ColocarCarrilIda(4, 2);
+			}
 		glPopMatrix();
 		glPushMatrix();
 		glTranslatef(-72.0f, -25.5f, 25.0f);
 		carrito();
+		glPopMatrix();
+		glPushMatrix();
+		glTranslatef(-72.0f, -28.5f, -100.0f);
+		RusaRampa(4);
+		glPopMatrix();
 	glPopMatrix();
 
 
