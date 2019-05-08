@@ -563,9 +563,12 @@ void Rusa(float altura) {
 }
 
 void RusaRampa(float altura) {
+	float altura2 = altura * 1.1;
+
 	glPushMatrix();
 	glPushMatrix();
-	glRotated(45, 1, 0, 0);
+	glTranslatef(0,2,0);
+	glRotated(30, 1, 0, 0);
 	glPushMatrix();
 	glTranslatef(-2, 0, 0);
 	glRotatef(-90, 0, 1, 0);
@@ -588,22 +591,22 @@ void RusaRampa(float altura) {
 	glPopMatrix();
 	glPopMatrix();
 	glPushMatrix();
-	glTranslatef(-2, -((altura) / 2), -2);
+	glTranslatef(-2, -1+((altura2) / 2), -2);
+	glRotatef(90, 0, 0, 1);
+	figura.cilindro(0.5, altura2, 40);
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(-2, 1-((altura) / 2), 2);
 	glRotatef(90, 0, 0, 1);
 	figura.cilindro(0.5, altura, 40);
 	glPopMatrix();
 	glPushMatrix();
-	glTranslatef(-2, -((altura) / 2), 2);
+	glTranslatef(2, -1+((altura2) / 2), -2);
 	glRotatef(90, 0, 0, 1);
-	figura.cilindro(0.5, altura, 40);
+	figura.cilindro(0.5, altura2, 40);
 	glPopMatrix();
 	glPushMatrix();
-	glTranslatef(2, -((altura) / 2), -2);
-	glRotatef(90, 0, 0, 1);
-	figura.cilindro(0.5, altura, 40);
-	glPopMatrix();
-	glPushMatrix();
-	glTranslatef(2, -((altura) / 2), 2);
+	glTranslatef(2, 1-((altura) / 2), 2);
 	glRotatef(90, 0, 0, 1);
 	figura.cilindro(0.5, altura, 40);
 	glPopMatrix();
@@ -857,7 +860,7 @@ void display(void) {
 		carrito();
 		glPopMatrix();
 		glPushMatrix();
-		glTranslatef(-72.0f, -28.5f, -100.0f);
+		glTranslatef(-72.0f, -28.5f, -77.0f);
 		RusaRampa(4);
 		glPopMatrix();
 	glPopMatrix();
