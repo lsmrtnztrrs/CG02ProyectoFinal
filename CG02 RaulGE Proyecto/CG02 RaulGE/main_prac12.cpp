@@ -927,61 +927,78 @@ void display(void) {
 	glTranslatef(-72.0f, -25.5f, 25.0f);
 	carrito();
 	glPopMatrix();
+
 	glPushMatrix();
-	glTranslatef(-72.0f, -28.5f, -65.0f);
+	glTranslatef(-72.0f, -28.5f, -69.0f);
 	RusaRampa(4);
 	glPopMatrix();
 	glPushMatrix();
-		glTranslatef(-72.0f, -24.5f, -72.0f);
+		glTranslatef(-72.0f, -24.5f, -76.0f);
 		RusaRampa(4);
 	glPopMatrix();
 	glPushMatrix();
-		glTranslatef(-72.0f, -20.5f, -79.5f);
+		glTranslatef(-72.0f, -20.5f, -83.5f);
 		Rusa(8);
 	glPopMatrix();
 	glPushMatrix();
-	glTranslatef(-72.7f, -20.5f, -85.0f);
+	glTranslatef(-72.7f, -20.5f, -89.0f);
 	VueltaAsist();
 	glPopMatrix();
 	glPushMatrix();
-	glTranslatef(-74.8f, -20.5f, -88.0f);
+	glTranslatef(-74.8f, -20.5f, -92.0f);
 	glRotatef(25,0,1,0);
 	VueltaAsist();
 	glPopMatrix();
 	glPushMatrix();
-	glTranslatef(-79.2f, -20.5f, -90.0f);
+	glTranslatef(-79.2f, -20.5f, -94.0f);
 	VueltaCarril(6);
 	glPopMatrix();
 
+	glPushMatrix();
+	glTranslatef(-86.4f, -20.5f, -94.8f);
+	glRotatef(92,0,1,0);
+	Rusa(10);
+
+	glPopMatrix();
 
 	glPushMatrix();
-	glTranslatef(-97.0f, -28.5f, -65.0f);
+	glTranslatef(-90.5f, -20.5f, -96.75f);
+	figura.cilindro(0.5,1,40);
+	glPopMatrix();
+
+
+	glPushMatrix();
+	glTranslatef(-97.0f, -28.5f, -69.0f);
 	RusaRampa(4);
 	glPopMatrix();
 	glPushMatrix();
-	glTranslatef(-97.0f, -24.5f, -72.0f);
+	glTranslatef(-97.0f, -24.5f, -76.0f);
 	RusaRampa(4);
 	glPopMatrix();
 	glPushMatrix();
-	glTranslatef(-97.0f, -20.5f, -79.5f);
+	glTranslatef(-97.0f, -20.5f, -83.5f);
 	Rusa(8);
 	glPopMatrix();
-	/*
+	
 	glPushMatrix();
-	glTranslatef(-92.7f, -20.5f, -85.0f);
-	glRotatef(-130,0,1,0);
+	glTranslatef(-96.6f, -20.5f, -88.8f);
+	glRotatef(180,0,0,1);
+	glRotatef(-10,0,1,0);
 	VueltaAsist();
 	glPopMatrix();
 	glPushMatrix();
-	glTranslatef(-74.8f, -20.5f, -88.0f);
-	glRotatef(-155, 0, 1, 0);
+	glTranslatef(-95.2f, -20.5f, -92.0f);
+	glRotatef(180, 0, 0, 1);
+	glRotatef(20, 0, 1, 0);
 	VueltaAsist();
 	glPopMatrix();
 	glPushMatrix();
-	glTranslatef(-79.2f, -20.5f, -90.0f);
-	glRotatef(-160,0,1,0);
-	VueltaCarril(6);
-	glPopMatrix();*/
+	glTranslatef(-92.3f, -20.5f, -94.0f);
+	glRotatef(95,0,1,0);
+	//glRotatef(-40, 0, 1, 0);
+	//VueltaCarril(6);
+	VueltaAsist();
+	glPopMatrix();
 
 	glPopMatrix();
 
