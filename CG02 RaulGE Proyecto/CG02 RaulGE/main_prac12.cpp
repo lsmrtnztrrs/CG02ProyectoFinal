@@ -515,6 +515,33 @@ void InitGL(GLvoid)     // Inicializamos parametros
 }
 
 
+void Rusa() {
+	glPushMatrix();
+	glPushMatrix();
+	glTranslatef(-2, 0, 0);
+	glRotatef(-90, 0, 1, 0);
+	figura.cilindro(0.5, 8, 40);
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(2, 0, 0);
+	glRotatef(-90, 0, 1, 0);
+	figura.cilindro(0.5, 8, 40);
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(0, 0, -2);
+	//glRotatef(-90, 0, 1, 0);
+	figura.cilindro(0.5, 4, 40);
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(0, 0, 2);
+	//glRotatef(-90, 0, 1, 0);
+	figura.cilindro(0.5, 4, 40);
+	glPopMatrix();
+	glPopMatrix();
+
+
+}
+
 void display(void) {
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -684,14 +711,25 @@ void display(void) {
 	/* FIN SKYBOX */
 
 	//simbolo parque de diversiones 
-	glPushMatrix();
+	/*glPushMatrix();
 	glTranslatef(-85.0f, -29.0f, -20.5f);
 	glRotatef(90, 0, 1, 0);
 	glDisable(GL_LIGHTING);
 	renders.cube(30.0, 0.2, 30.0,
 		six.GLindex, six.GLindex, six.GLindex, six.GLindex, six.GLindex, six.GLindex);
 	glEnable(GL_LIGHTING);
+	glPopMatrix();*/
+
+
+	// Montaña rusa
+
+	glPushMatrix();
+	glPushMatrix();
+	glTranslatef(-70.0f, -28.5f, -20.5f);
+	Rusa();
 	glPopMatrix();
+	glPopMatrix();
+
 
 	//Cancha de Futbol
 
