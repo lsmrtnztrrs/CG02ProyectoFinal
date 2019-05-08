@@ -1000,6 +1000,93 @@ void display(void) {
 	VueltaAsist();
 	glPopMatrix();
 
+
+
+	//Vuelta de montaña
+	glPushMatrix();
+
+
+	glRotatef(180,0,1,0);
+	glTranslatef(0, 0, 36);
+	
+	glPushMatrix();
+	glTranslatef(72.0f, -28.5f, -69.0f);
+	RusaRampa(4);
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(72.0f, -24.5f, -76.0f);
+	RusaRampa(4);
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(72.0f, -20.5f, -83.5f);
+	Rusa(8);
+	glPopMatrix();
+	glPushMatrix();
+	
+	glTranslatef(72.7f, -20.5f, -89.0f);
+	glRotatef(135,0,1,0);
+	VueltaAsist();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(74.8f, -20.5f, -92.0f);
+	glRotatef(120, 0, 1, 0);
+	VueltaAsist();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(79.2f, -20.5f, -94.0f);
+	glRotatef(28, 0, 1, 0);
+	VueltaCarril(6);
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(86.4f, -20.5f, -94.8f);
+	glRotatef(92, 0, 1, 0);
+	Rusa(10);
+
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(90.5f, -20.5f, -96.76f);
+	figura.cilindro(0.5, 1, 40);
+	glPopMatrix();
+
+
+	glPushMatrix();
+	glTranslatef(97.0f, -28.5f, -69.0f);
+	RusaRampa(4);
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(97.0f, -24.5f, -76.0f);
+	RusaRampa(4);
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(97.0f, -20.5f, -83.5f);
+	Rusa(8);
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(96.6f, -20.5f, -88.8f);
+	glRotatef(1, 0, 1, 0);
+	glRotatef(-10, 0, 1, 0);
+	VueltaAsist();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(95.2f, -20.5f, -92.0f);
+	//glRotatef(10, 0, 1, 0);
+	glRotatef(20, 0, 1, 0);
+	VueltaAsist();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(92.3f, -20.5f, -94.0f);
+	glRotatef(45, 0, 1, 0);
+	//glRotatef(-40, 0, 1, 0);
+	//VueltaCarril(6);
+	VueltaAsist();
+	glPopMatrix();
+
+
+	glPopMatrix();
+
 	glPopMatrix();
 
 	//Cancha de Futbol
@@ -2814,16 +2901,20 @@ void display(void) {
 
 	/////////////////////////////////////////////
 		//Poste Avion//
+
 	glPushMatrix();
+
 	glTranslatef(-30, 0, -30);
 	glScalef(3, 3, 3);
-	figura.cilindroVertical(0.5, -10, 10, 0);
+	glColor3f(0, 1, 0);
+	figura.cilindroVertical(0.5, -10, 10, 6);
 
 	glPopMatrix();
 
 	/////////////////////////////////
 		//Avion2
 	glPushMatrix();
+
 	glTranslatef(-30, 0, -30);
 	glRotatef(180, 0, 1, 0);
 	glScalef(2, 2, 2);
@@ -2832,7 +2923,9 @@ void display(void) {
 
 	glRotatef(giroAvion1, 0, 1, 0);
 	glRotatef(40, 0, 0, 1);
-	figura.cilindroVertical(0.1, -10, 10, 0);
+	glColor3f(1, 0, 0);
+	figura.cilindroVertical(0.1, -10, 10, 13);
+
 	glDisable(GL_COLOR_MATERIAL);
 	glTranslatef(0, -10, 0);
 	glScalef(0.03, 0.03, 0.03);
@@ -2856,12 +2949,14 @@ void display(void) {
 	glPushMatrix();
 	glRotatef(giroAvion1, 0, 1, 0);
 	glRotatef(40, 0, 0, 1);
+	glColor3f(1, 0, 0);
 	figura.cilindroVertical(0.1, -10, 10, 0);
 	glDisable(GL_COLOR_MATERIAL);
 	glTranslatef(0, -10, 0);
 	glScalef(0.03, 0.03, 0.03);
 	avion1.GLrender(NULL, _SHADED, 1.0);  //_WIRED O _POINTS
 	glEnable(GL_COLOR_MATERIAL);
+	glColor3f(0, 0, 0);
 	glPopMatrix();
 
 	glPopMatrix();
