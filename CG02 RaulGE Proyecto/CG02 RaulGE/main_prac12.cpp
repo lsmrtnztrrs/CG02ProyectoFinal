@@ -678,6 +678,75 @@ void ColocarCarrilIda(float LongitudRiel, float AlturaRiel) {
 	Rusa(AlturaRiel);
 }
 
+void VueltaCarril(float altura) {
+	glPushMatrix();
+	glRotatef(73, 0, 1, 0);
+	
+	glPushMatrix();
+	glTranslatef(-2, 0, 0);
+	glRotatef(-90, 0, 1, 0);
+	figura.cilindro(0.5, 5.3, 40);
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(2, 0, 0);
+	glRotatef(-90, 0, 1, 0);
+	figura.cilindro(0.5, 9, 40);
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(0, 0, -2);
+	//glRotatef(-90, 0, 1, 0);
+	figura.cilindro(0.5, 4, 40);
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(0, 0, 2);
+	//glRotatef(-90, 0, 1, 0);
+	figura.cilindro(0.5, 4, 40);
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(-2, -((altura) / 2), -2);
+	glRotatef(90, 0, 0, 1);
+	figura.cilindro(0.5, altura, 40);
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(-2, -((altura) / 2), 2);
+	glRotatef(90, 0, 0, 1);
+	figura.cilindro(0.5, altura, 40);
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(2, -((altura) / 2), -2);
+	glRotatef(90, 0, 0, 1);
+	figura.cilindro(0.5, altura, 40);
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(2, -((altura) / 2), 2);
+	glRotatef(90, 0, 0, 1);
+	figura.cilindro(0.5, altura, 40);
+	glPopMatrix();
+	
+	glPopMatrix();
+}
+
+void VueltaAsist() {
+	glPushMatrix();
+	glRotatef(20, 0, 1, 0);
+	glPushMatrix();
+	glTranslatef(-2, 0, 0);
+	glRotatef(-90, 0, 1, 0);
+	figura.cilindro(0.5, 3, 40);
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(2, 0, 0);
+	glRotatef(-90, 0, 1, 0);
+	figura.cilindro(0.5, 4.5, 40);
+	glPopMatrix();
+	glPushMatrix();
+	//glTranslatef(0, 0, -2);
+	//glRotatef(-90, 0, 1, 0);
+	figura.cilindro(0.5, 4, 40);
+	glPopMatrix();
+	glPopMatrix();
+}
+
 void display(void) {
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -841,7 +910,7 @@ void display(void) {
 	glPushMatrix();
 	glPushMatrix();
 	glTranslatef(-72.0f, -28.5f, 30.0f);
-	for (int i = 0; i < 25; i++)
+	for (int i = 0; i < 23; i++)
 	{
 		ColocarCarrilIda(4, 2);
 	}
@@ -849,7 +918,7 @@ void display(void) {
 
 	glPushMatrix();
 	glTranslatef(-97.0f, -28.5f, 30.0f);
-	for (int i = 0; i < 25; i++)
+	for (int i = 0; i < 23; i++)
 	{
 		ColocarCarrilIda(4, 2);
 	}
@@ -859,12 +928,30 @@ void display(void) {
 	carrito();
 	glPopMatrix();
 	glPushMatrix();
-	glTranslatef(-72.0f, -28.5f, -77.0f);
+	glTranslatef(-72.0f, -28.5f, -65.0f);
 	RusaRampa(4);
 	glPopMatrix();
 	glPushMatrix();
-		glTranslatef(-72.0f, -24.5f, -84.0f);
+		glTranslatef(-72.0f, -24.5f, -72.0f);
 		RusaRampa(4);
+	glPopMatrix();
+	glPushMatrix();
+		glTranslatef(-72.0f, -20.5f, -79.5f);
+		Rusa(8);
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(-72.7f, -20.5f, -85.0f);
+	VueltaAsist();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(-74.8f, -20.5f, -88.0f);
+	glRotatef(25,0,1,0);
+	VueltaAsist();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(-79.2f, -20.5f, -90.0f);
+	
+	VueltaCarril(6);
 	glPopMatrix();
 	glPopMatrix();
 
