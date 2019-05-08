@@ -149,6 +149,10 @@ GLfloat m_s1[] = { 18 };
 /* FIN MATERIALES */
 
 /* INICIO TEXTURAS */
+CTexture parque;
+CTexture parque2;
+CTexture parque3;
+CTexture parque4;
 
 CTexture none;
 CTexture wood;
@@ -399,6 +403,22 @@ void InitGL(GLvoid)     // Inicializamos parametros
 	glEnable(GL_NORMALIZE);
 
 	/* CARGA TEXTURAS */
+
+	parque.LoadTGA("texturas/parque.tga");
+	parque.BuildGLTexture();
+	parque.ReleaseImage();
+
+	parque2.LoadTGA("texturas/parque2.tga");
+	parque2.BuildGLTexture();
+	parque2.ReleaseImage();
+
+	parque3.LoadTGA("texturas/parque3.tga");
+	parque3.BuildGLTexture();
+	parque3.ReleaseImage();
+
+	parque4.LoadTGA("texturas/parque4.tga");
+	parque4.BuildGLTexture();
+	parque4.ReleaseImage();
 
 	none.LoadTGA("texturas/none.tga");
 	none.BuildGLTexture();
@@ -661,7 +681,7 @@ void display(void) {
 	glEnable(GL_LIGHTING);
 	glPopMatrix();
 
-	/* FIN SKYBOX */
+	/*FIN SKYBOX */
 
 	//simbolo parque de diversiones 
 	glPushMatrix();
@@ -706,7 +726,7 @@ void display(void) {
 
 	
 
-/* EJES DE REFERENCIA */
+/* EJES DE REFERENCIA 
 
 	glPushMatrix();
 	glDisable(GL_TEXTURE_2D);
@@ -727,7 +747,7 @@ void display(void) {
 	glEnable(GL_LIGHTING);
 	glPopMatrix();
 
-	/* FIN EJES DE REFERENCIA */
+	FIN EJES DE REFERENCIA */
 	
 	/* Martillo */
 	glPushMatrix();
@@ -2483,8 +2503,7 @@ void display(void) {
 	//////////////////Juego Aviones///////////////////
 
 	
-
-	//////////////////////////////////////////
+	/////////////////////////////////////////////
 		//Poste Avion//
 	glPushMatrix();
 	glTranslatef(-30, 0, -30);
@@ -2519,12 +2538,26 @@ void display(void) {
 
 	//////////////////////////////////////////
 
-	/////////Rieles de Montaña////////////////
+			//Avion1
+	glPushMatrix();
+	glTranslatef(-30, 0, -30);
+	glRotatef(360, 0, 1, 0);
+	glScalef(2, 2, 2);
 
+	glPushMatrix();
+	glRotatef(giroAvion1, 0, 1, 0);
+	glRotatef(40, 0, 0, 1);
+	figura.cilindroVertical(0.1, -10, 10, 0);
+	glDisable(GL_COLOR_MATERIAL);
+	glTranslatef(0, -10, 0);
+	glScalef(0.03, 0.03, 0.03);
+	avion1.GLrender(NULL, _SHADED, 1.0);  //_WIRED O _POINTS
+	glEnable(GL_COLOR_MATERIAL);
+	glPopMatrix();
 
-	///////////////////////////////////////////
+	glPopMatrix();
 
-
+	//////////////////////////////////////////
 
 
 	glEnable(GL_COLOR_MATERIAL); //	DESACTIVAR COLORES PARA MODELOS 3D
