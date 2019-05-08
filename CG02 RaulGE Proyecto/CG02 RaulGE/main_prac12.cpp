@@ -950,9 +950,39 @@ void display(void) {
 	glPopMatrix();
 	glPushMatrix();
 	glTranslatef(-79.2f, -20.5f, -90.0f);
-	
 	VueltaCarril(6);
 	glPopMatrix();
+
+
+	glPushMatrix();
+	glTranslatef(-97.0f, -28.5f, -65.0f);
+	RusaRampa(4);
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(-97.0f, -24.5f, -72.0f);
+	RusaRampa(4);
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(-97.0f, -20.5f, -79.5f);
+	Rusa(8);
+	glPopMatrix();
+	/*
+	glPushMatrix();
+	glTranslatef(-92.7f, -20.5f, -85.0f);
+	glRotatef(-130,0,1,0);
+	VueltaAsist();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(-74.8f, -20.5f, -88.0f);
+	glRotatef(-155, 0, 1, 0);
+	VueltaAsist();
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(-79.2f, -20.5f, -90.0f);
+	glRotatef(-160,0,1,0);
+	VueltaCarril(6);
+	glPopMatrix();*/
+
 	glPopMatrix();
 
 	//Cancha de Futbol
