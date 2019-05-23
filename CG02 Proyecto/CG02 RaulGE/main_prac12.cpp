@@ -127,8 +127,9 @@ static int stacks = 16;
 int i, c;
 float vcs;
 float x;
-/*float vr = 0, tiempor = 0;
+float vr = 0, tiempor = 0;
 int er, aux;
+/*
 double vo;
 int ek;
 double vk = 0;
@@ -1011,6 +1012,169 @@ void carrusel() {
 
 	glPopMatrix();
 	}
+
+
+
+
+
+void Rueda() {
+
+	if (er == 1)vr -= 1;
+	else vr += .1;
+	if (vr > 180)er = 1;
+	else if (vr < -180) er = 2;
+
+	glColor3d(1, 1, 0);
+
+	glPushMatrix();
+	glTranslated(-25, 0, 0);
+	glScalef(4, 4, 4);
+
+	glPushMatrix();
+	glTranslated(10, 4, -8.3);
+	glRotated(vr, 0, 0, 1);
+	glColor3d(sin(luz / 9), 1, 0); c = 1;
+	glutWireTorus(0.3, 2.2, 6, stacks);
+
+	glColor3d(1, 0, 0);
+	for (i = 0; i < 30; i++)//30
+	{
+		glPushMatrix();
+		glRotated(90, 0, 1, 0);
+		glRotated(12 * i, 1, 0, 0);
+		glutWireCone(0, 1.89, 2, 1);
+		glPopMatrix();
+	}
+
+	for (i = 0; i <= 12; i++)
+	{
+		glPushMatrix();
+		glColor3d(0, 1, 1);
+		glRotated(90, 0, 1, 0);
+		glRotated(30 * i, 1, 0, 0);
+		glTranslated(0, 2.4, 0);
+		glTranslated(-0.2, 0, 0);
+		glRotated(270, 1, 0, 0);
+		glutSolidCone(0.05, 0.5, slices, stacks);
+		glTranslated(0.4, 0, 0);
+		glutSolidCone(0.05, 0.5, slices, stacks);
+		glTranslated(-0.2, 0, 0.5);
+		glRotated(vr, 1, 0, 0);
+		glutSolidCube(0.2);
+		glTranslated(0, 0.1, 0);
+		glutSolidCube(0.1);
+		glPopMatrix();
+	}
+
+	glutSolidCone(0.2, 0.7, slices, stacks);
+	glRotated(180, 1, 0, 0);
+	glutSolidCone(0.2, 0.7, slices, stacks);
+	glPopMatrix();
+
+	glPushMatrix();
+	glColor3d(1, 1, 1);
+	glTranslated(10, 4, -9);
+	glRotated(90, 0, 1, 0);
+	glutSolidSphere(0.1, slices, stacks);
+	glTranslated(-1.4, 0, 0);
+	glutSolidSphere(0.1, slices, stacks);
+	glTranslated(0, -3.4, 0);
+	glRotated(180, 0, 1, 1);
+	glutSolidCone(0.2, 3.4, slices, stacks);
+	glColor3d(0, 0, 1);
+	glutSolidCube(0.8);
+	glTranslated(-1.4, 0, 0);
+	glColor3d(1, 1, 1);
+	glutSolidCone(0.2, 3.4, slices, stacks);
+	glColor3d(0, 0, 1);
+
+	glutSolidCube(0.8);
+	glPopMatrix();
+	glPopMatrix();
+}//end Rueda
+
+
+
+
+
+void Boomerang()
+{
+	//glColor3d(1, 0, 0);
+	glDisable(GL_LIGHTING);
+	for (i = 0, c = 0; i < 5; i++)
+	{
+		glPushMatrix();
+		if (c == 0) { glColor3d(0, 0, sin(luz*(i + 1))); c = 1; }
+		else if (c == 1) { glColor3d(0, sin(luz*(i + 1)), sin(luz*(i + 1))); c = 0; }
+		glTranslated(45, 0, -106 + (25 * i)); glRotated(-90, 1, 0, 0); glutSolidCone(0.5, 2.0, slices, stacks);
+		glTranslated(0, 0, 2); glutSolidSphere(0.2, slices, stacks);
+		glTranslated(-5, 0, -2); glutSolidCone(0.5, 2.0, slices, stacks);
+		glTranslated(0, 0, 2); glutSolidSphere(0.2, slices, stacks);
+		glPopMatrix();
+	}
+
+	glPushMatrix();
+	glColor3d(1, 1, 1);
+	glTranslated(45, 0, 40); glRotated(-90, 1, 0, 0); glutSolidCone(1, 37, slices, stacks);
+	glTranslated(-5, 0, 0); glutSolidCone(1, 37, slices, stacks);
+	glColor3d(sin(luz), sin(luz), 0);
+	glTranslated(0, 0, 37);
+	glutSolidSphere(1.5, slices, stacks);
+	glTranslated(5, 0, 0);
+	glutSolidSphere(1.5, slices, stacks);
+	glPopMatrix();
+
+
+	glColor3d(1, 1, 1);
+	glPushMatrix();
+	glTranslated(45, 3, 0);
+	glRotated(-90, 0, 1, 0);
+	glRotated(270, 0, 0, 1);
+	GLint circle_points = 100;
+	glLineWidth(4);
+	glBegin(GL_LINE_STRIP);
+	glVertex2f(0.999, -106);
+	for (i = 0; i < 16; i++)
+	{
+		angle = 2 * PI*i / circle_points; glVertex2f(cos(angle), sin(angle));
+	}
+	glVertex2f(-33.5, 40);
+	glEnd();
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslated(40, 3, 0);
+	glRotated(-90, 0, 1, 0);
+	glRotated(270, 0, 0, 1);
+	glBegin(GL_LINE_STRIP);
+	glVertex2f(0.999, -106);
+	for (i = 0; i < 16; i++)
+	{
+		angle = 2 * PI*i / circle_points; glVertex2f(cos(angle), sin(angle));
+	}
+	glVertex2f(-33.5, 40);
+	glEnd();
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslated(42.5, 2.0, -106);
+	if (eb == 0) { vbz += 1; glTranslated(0, 0, vbz); if (vbz > 106) { eb = 1; rotar = 1; } }
+	else if (eb == 1) { vbz += 1; vby += 0.89; glTranslated(0, vby, vbz); if (vby >= 35) { eb = 2; } }
+	else if (eb == 2) { vbz -= 1 * 8; vby -= 0.89 * 8; glTranslated(0, vby, vbz); if (vby < 1.5) { eb = 3; rotar = -1; } }
+	else if (eb == 3) { vbz -= 4; glTranslated(0, 0, vbz); if (vbz < 0) { eb = 0; } }
+	if (rotar == 1)glRotated(-30, 1, 0, 0); if (rotar == -1)glRotated(0, 1, 0, 0);
+	glPushMatrix();
+	glColor3d(1, 1, 0);
+	glScalef(2.5, 2.5, 8);
+	glutSolidSphere(0.5, slices, stacks);
+	glRotated(90, 0, 1, 0); glutSolidCone(0.1, 1.2, slices, stacks);
+	glRotated(-180, 0, 1, 0); glutSolidCone(0.1, 1.2, slices, stacks);
+	glPopMatrix();
+	glPopMatrix();
+	glLineWidth(1);
+
+}
+
 
 
 
