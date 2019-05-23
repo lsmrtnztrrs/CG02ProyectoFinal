@@ -1024,11 +1024,12 @@ void Rueda() {
 	if (vr > 180)er = 1;
 	else if (vr < -180) er = 2;
 
-	glColor3d(1, 1, 0);
+	//glColor3d(1, 1, 0);
 
 	glPushMatrix();
-	glTranslated(-25, 0, 0);
-	glScalef(4, 4, 4);
+	glTranslated(2, -12, 10);
+	glRotated(90, 0, 1, 0);
+	glScalef(8, 8, 8);
 
 	glPushMatrix();
 	glTranslated(10, 4, -8.3);
@@ -1553,12 +1554,25 @@ void display(void) {
 	glPopMatrix();	// TERMINA ASFALTO
 
 
+	//Modelo de carrusel
+
 	glPushMatrix();
 		glTranslated(20,-20,30);
 		carrusel();
 	glPopMatrix();
 
 
+	// Modelo de rueda de la fortuna Grande
+
+
+	glPushMatrix();
+		glTranslated(-20, -20, 30);
+		Rueda();
+	glPopMatrix();
+
+	glPushMatrix();
+	glColor3f(1,1,1);
+	glPopMatrix();
 
 
 /* EJES DE REFERENCIA
