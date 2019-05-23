@@ -724,6 +724,10 @@ void InitGL(GLvoid)     // Inicializamos parametros
 
 void Rusa(float altura) {
 	glPushMatrix();
+
+	glColor3f(0.63, 0, 0.63);
+
+
 	glPushMatrix();
 	glTranslatef(-2, 0, 0);
 	glRotatef(-90, 0, 1, 0);
@@ -764,6 +768,10 @@ void Rusa(float altura) {
 	glRotatef(90, 0, 0, 1);
 	figura.cilindro(0.5, altura, 40);
 	glPopMatrix();
+
+
+	glColor3f(1, 1, 1);
+
 	glPopMatrix();
 
 
@@ -773,6 +781,8 @@ void RusaRampa(float altura) {
 	float altura2 = altura * 1.1;
 
 	glPushMatrix();
+
+	glColor3f(0.63, 0, 0.63);
 	glPushMatrix();
 	glTranslatef(0, 2, 0);
 	glRotated(30, 1, 0, 0);
@@ -817,6 +827,9 @@ void RusaRampa(float altura) {
 	glRotatef(90, 0, 0, 1);
 	figura.cilindro(0.5, altura, 40);
 	glPopMatrix();
+
+
+	glColor3f(1, 1, 1);
 	glPopMatrix();
 
 
@@ -825,6 +838,7 @@ void RusaRampa(float altura) {
 void carrito() {
 
 	glPushMatrix();
+	glColor3f(0.76, 0, 0);
 	glTranslatef(0, 0, -2.5);
 	glRotatef(-90, 1, 0, 0);
 	figura.cono(3, 2, 40, 0);
@@ -847,6 +861,8 @@ void carrito() {
 	glTranslatef(0, -2, 2);
 	//glRotatef(-90, 0, 1, 0);
 	figura.cilindro(0.5, 4, 40);
+
+	glColor3f(1, 1, 1);
 	glPopMatrix();
 	/*glPushMatrix();
 		glTranslatef(-2,-2,2);
@@ -861,12 +877,18 @@ void carrito() {
 }
 
 void ColocarCarrilIda(float LongitudRiel, float AlturaRiel) {
+	
+	glColor3f(0.63, 0, 0.63);
 	glTranslatef(0, 0, -(LongitudRiel));
 	Rusa(AlturaRiel);
+	glColor3f(1, 1, 1);
+	
 }
 
 void VueltaCarril(float altura) {
 	glPushMatrix();
+
+	glColor3f(0.63, 0, 0.63);
 	glRotatef(73, 0, 1, 0);
 	
 	glPushMatrix();
@@ -910,11 +932,15 @@ void VueltaCarril(float altura) {
 	figura.cilindro(0.5, altura, 40);
 	glPopMatrix();
 	
+
+	glColor3f(1, 1, 1);
 	glPopMatrix();
 }
 
 void VueltaAsist() {
+
 	glPushMatrix();
+	glColor3f(0.63, 0, 0.63);
 	glRotatef(20, 0, 1, 0);
 	glPushMatrix();
 	glTranslatef(-2, 0, 0);
@@ -931,6 +957,8 @@ void VueltaAsist() {
 	//glRotatef(-90, 0, 1, 0);
 	figura.cilindro(0.5, 4, 40);
 	glPopMatrix();
+
+	glColor3f(1, 1, 1);
 	glPopMatrix();
 }
 
