@@ -1100,8 +1100,11 @@ void Rueda() {
 
 void Boomerang()
 {
+
+
+	glTranslated(-53.5,-10,-20);
 	//glColor3d(1, 0, 0);
-	glDisable(GL_LIGHTING);
+	//glDisable(GL_LIGHTING);
 	for (i = 0, c = 0; i < 5; i++)
 	{
 		glPushMatrix();
@@ -1569,6 +1572,18 @@ void display(void) {
 		glTranslated(-20, -20, 30);
 		Rueda();
 	glPopMatrix();
+
+
+
+	//juego de montaña rusa 2
+
+
+	glPushMatrix();
+	glTranslated(-40, -20, 40);
+	Boomerang();
+	glPopMatrix();
+
+
 
 	glPushMatrix();
 	glColor3f(1,1,1);
