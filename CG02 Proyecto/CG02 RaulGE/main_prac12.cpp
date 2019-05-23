@@ -48,6 +48,8 @@ TECLAS
 //		k/k: Tomar lo Kframes
 //		l/L: Reproducir los Kframes guardados
 
+
+
 		//SPACE : Comenzar con recorrido de las figuras 3d de los monitos.
 
 
@@ -262,6 +264,13 @@ float rotRodDer = 0.0;
 float rotBrazos = 0.0;
 bool g_persona = false;
 bool g_persona2 = true;
+
+
+
+//Animacion del carrito
+bool movimiento = true;
+float rotllanta = 0.0;
+
 
 //Animación del coche
 float angRot = 0.0;
@@ -836,7 +845,7 @@ void RusaRampa(float altura) {
 }
 
 void carrito() {
-
+	glTranslatef(0, 0,- movKit);
 	glPushMatrix();
 	glColor3f(0.76, 0, 0);
 	glTranslatef(0, 0, -2.5);
@@ -1388,7 +1397,7 @@ void display(void) {
 	}
 	glPopMatrix();
 	glPushMatrix();
-	glTranslatef(-72.0f, -25.5f, 25.0f);
+	glTranslatef(-72.0f, -25.5f, 5.0f);
 	carrito();
 	glPopMatrix();
 
@@ -3542,6 +3551,30 @@ void animacion()
 		obj.text_der = 1;
 
 
+
+	//Movimiento de carrito
+
+	if (g_fanimacion)
+	{
+		if (movKit == 125.0) {
+			movimiento = false;
+		}
+		else if (movKit == -125.0) {
+			movimiento = true;
+		}
+
+		if (movimiento == true) {
+			rotllanta += 5.0;
+			movKit += 1.0;
+
+
+		}
+		if (movimiento == false) {
+			movKit -= 1.0;
+			rotllanta -= 5.0;
+		}
+	}
+
 	//Movimiento del monito
 	if (play)
 	{
@@ -3658,7 +3691,7 @@ void keyboard(unsigned char key, int x, int y) {
 		g_persona = false;
 		voltear = 90.0;
 
-
+		g_fanimacion = true; //Activamos/desactivamos la animacíon
 
 		g_persona ^= true; //Activamos/desactivamos la animacíon
 		break;
