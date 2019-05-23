@@ -63,6 +63,9 @@ TECLAS
 #include "animaciones.h"
 #include "cmodel/CModel.h"
 
+#include "Windows.h"
+#include "MMSystem.h"
+
 
 
 
@@ -3945,13 +3948,17 @@ void animation() {
 
 void audio() {
 
-	PlaySound("feria.wav", NULL, SND_ASYNC | SND_FILENAME | SND_LOOP);
+	PlaySound("montana_rusa.wav", NULL, SND_SYNC);
+
+	//PlaySound("montana_rusa.wav", NULL, SND_ASYNC | SND_FILENAME | SND_LOOP);
+	printf("se reproduce audio");
 }
 
 
 int main(int argc, char** argv) {
 
-	//audio();
+	audio();
+	
 
 	glutInit(&argc, argv); // Inicializamos OpenGL
 	glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH); // Display Mode (Clores RGB y alpha | Buffer Doble )
