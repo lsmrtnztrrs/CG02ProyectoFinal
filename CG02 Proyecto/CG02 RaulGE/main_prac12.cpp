@@ -112,6 +112,7 @@ bool play = false;
 int playIndex = 0;
 
 int rueda = 0;
+
 //NEW//////////////////NEW//////////////////NEW//////////////////NEW////////////////
 
 int w = 500, h = 500;
@@ -1384,7 +1385,9 @@ void display(void) {
 	// Montaña rusa
 
 	glPushMatrix();
+
 	glPushMatrix();
+
 	glTranslatef(-72.0f, -28.5f, 30.0f);
 	for (int i = 0; i < 23; i++)
 	{
@@ -1474,6 +1477,7 @@ void display(void) {
 	//glRotatef(-40, 0, 1, 0);
 	//VueltaCarril(6);
 	VueltaAsist();
+
 	glPopMatrix();
 
 
@@ -1483,6 +1487,7 @@ void display(void) {
 
 
 	glRotatef(180,0,1,0);
+
 	glTranslatef(0, 0, 36);
 	
 	glPushMatrix();
@@ -1600,9 +1605,11 @@ void display(void) {
 	//Modelo de carrusel
 
 	glPushMatrix();
+
 		glTranslated(1,-10,10);
 		glScalef(2.2,2.2,2.2);
 		carrusel();
+
 	glPopMatrix();
 
 
@@ -1610,8 +1617,10 @@ void display(void) {
 
 
 	glPushMatrix();
+
 		glTranslated(-20, -20, 30);
 		Rueda();
+
 	glPopMatrix();
 
 
@@ -1620,8 +1629,10 @@ void display(void) {
 
 
 	glPushMatrix();
+
 	glTranslated(-40, -20, 40);
 	Boomerang();
+
 	glPopMatrix();
 
 
@@ -3689,6 +3700,7 @@ void keyboard(unsigned char key, int x, int y) {
 		break;
 
 	case ' ':		//Poner algo en movimiento
+
 		movKit = 0.0;
 		movKitX = 0.0;
 		g_persona2 = true;
@@ -3710,7 +3722,9 @@ void keyboard(unsigned char key, int x, int y) {
 
 	case 'ñ':		//  
 	case 'Ñ':
+
 		circuito ^= true; //Activamos/desactivamos la animacíon
+
 		g_fanimacion = false;
 		break;
 
@@ -3735,6 +3749,7 @@ void keyboard(unsigned char key, int x, int y) {
 			play = true;
 			playIndex = 0;
 			i_curr_steps = 0;
+
 		}
 		else
 		{
@@ -3873,6 +3888,7 @@ void animation() {
 	// Calculate the number of frames per one second:
 	//dwFrames++;
 	dwCurrentTime = GetTickCount(); // Even better to use timeGetTime()
+
 	dwElapsedTime = dwCurrentTime - dwLastUpdateTime;
 
 	if (dwElapsedTime >= 50)
@@ -3905,6 +3921,7 @@ void animation() {
 		movKit += 0.5;
 
 		if (movKit == 10) {
+
 			g_persona2 = false;
 			g_persona = false;
 			voltear = -90.0;
@@ -3921,6 +3938,7 @@ void animation() {
 		movKit += 0.5;
 
 		if (movKit == 10) {
+
 			voltear = 90.0;
 			movKit = -10;
 			g_persona2 = true;
@@ -3935,6 +3953,7 @@ void animation() {
 
 	if (avion1Girando)
 	{
+
 		if (giroAvion1 < 360)
 			giroAvion1 += 20;
 		else
@@ -3952,6 +3971,7 @@ void audio() {
 	PlaySound("montana_rusa.wav", NULL, SND_SYNC);
 
 	//PlaySound("montana_rusa.wav", NULL, SND_ASYNC | SND_FILENAME | SND_LOOP);
+
 	printf("se reproduce audio");
 }
 
