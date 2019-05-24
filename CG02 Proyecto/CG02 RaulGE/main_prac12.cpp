@@ -1600,7 +1600,8 @@ void display(void) {
 	//Modelo de carrusel
 
 	glPushMatrix();
-		glTranslated(20,-20,30);
+		glTranslated(1,-10,10);
+		glScalef(2.2,2.2,2.2);
 		carrusel();
 	glPopMatrix();
 
