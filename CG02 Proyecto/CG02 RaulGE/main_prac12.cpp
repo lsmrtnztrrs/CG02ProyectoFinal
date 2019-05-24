@@ -1251,7 +1251,7 @@ void display(void) {
 	glColor3f(1, 0, 1);
 
 	glPushMatrix();
-	glDisable(GL_LIGHTING);
+	//glDisable(GL_LIGHTING);
 
 	glBegin(GL_TRIANGLES); //plano
 	glColor3f(1.0, 1.0, 1.0);
